@@ -1,0 +1,2548 @@
+┌──(deadcode㉿kali)-[~]
+└─$ sudo systemctl start docker       
+[sudo] password for deadcode: 
+                                                                                                                                                                                                                     
+┌──(deadcode㉿kali)-[~]
+└─$ cd /home/claude/jave
+go mod tidy
+cd: no such file or directory: /home/claude/jave
+go: go.mod file not found in current directory or any parent directory; see 'go help modules'
+                                                                                                                                                                                                                     
+┌──(deadcode㉿kali)-[~]
+└─$ cd /mnt/workshop/jave_engine/jave
+
+                                                                                                                                                                                                                     
+┌──(deadcode㉿kali)-[/mnt/workshop/jave_engine/jave]
+└─$ tree
+.
+├── bin
+│   └── jave
+├── cmd
+│   └── jave
+│       └── main.go
+├── go.mod
+├── go.sum
+├── hello.go
+├── internal
+│   ├── bridge
+│   │   └── server.go
+│   ├── config
+│   │   └── config.go
+│   ├── ollama
+│   │   └── client.go
+│   ├── sandbox
+│   │   └── exec.go
+│   ├── status
+│   │   └── status.go
+│   └── voice
+│       └── engine.go
+├── jave
+├── logs
+├── Makefile
+├── models
+│   └── voices
+│       ├── en_US-lessac-medium.onnx
+│       └── en_US-lessac-medium.onnx.json
+├── modules
+├── TODO.md
+└── whisper.cpp
+    ├── AUTHORS
+    ├── bindings
+    │   ├── CMakeLists.txt
+    │   ├── go
+    │   │   ├── doc.go
+    │   │   ├── examples
+    │   │   │   ├── go-model-download
+    │   │   │   │   ├── context.go
+    │   │   │   │   └── main.go
+    │   │   │   └── go-whisper
+    │   │   │       ├── color.go
+    │   │   │       ├── flags.go
+    │   │   │       ├── main.go
+    │   │   │       └── process.go
+    │   │   ├── go.mod
+    │   │   ├── go.sum
+    │   │   ├── LICENSE
+    │   │   ├── Makefile
+    │   │   ├── params.go
+    │   │   ├── pkg
+    │   │   │   └── whisper
+    │   │   │       ├── consts.go
+    │   │   │       ├── context.go
+    │   │   │       ├── context_test.go
+    │   │   │       ├── doc.go
+    │   │   │       ├── interface.go
+    │   │   │       ├── model.go
+    │   │   │       ├── model_test.go
+    │   │   │       └── util_test.go
+    │   │   ├── README.md
+    │   │   ├── samples
+    │   │   │   └── jfk.wav
+    │   │   ├── whisper.go
+    │   │   └── whisper_test.go
+    │   ├── java
+    │   │   ├── build.gradle
+    │   │   ├── gradle
+    │   │   │   └── wrapper
+    │   │   │       ├── gradle-wrapper.jar
+    │   │   │       └── gradle-wrapper.properties
+    │   │   ├── gradle.properties
+    │   │   ├── gradlew
+    │   │   ├── gradlew.bat
+    │   │   ├── README.md
+    │   │   ├── settings.gradle
+    │   │   └── src
+    │   │       ├── main
+    │   │       │   └── java
+    │   │       │       └── io
+    │   │       │           └── github
+    │   │       │               └── ggerganov
+    │   │       │                   └── whispercpp
+    │   │       │                       ├── bean
+    │   │       │                       │   └── WhisperSegment.java
+    │   │       │                       ├── callbacks
+    │   │       │                       │   ├── GgmlAbortCallback.java
+    │   │       │                       │   ├── WhisperEncoderBeginCallback.java
+    │   │       │                       │   ├── WhisperLogitsFilterCallback.java
+    │   │       │                       │   ├── WhisperNewSegmentCallback.java
+    │   │       │                       │   └── WhisperProgressCallback.java
+    │   │       │                       ├── ggml
+    │   │       │                       │   ├── GgmlTensor.java
+    │   │       │                       │   └── GgmlType.java
+    │   │       │                       ├── model
+    │   │       │                       │   ├── EModel.java
+    │   │       │                       │   ├── WhisperModel.java
+    │   │       │                       │   ├── WhisperModelLoader.java
+    │   │       │                       │   ├── WhisperState.java
+    │   │       │                       │   └── WhisperTokenData.java
+    │   │       │                       ├── params
+    │   │       │                       │   ├── BeamSearchParams.java
+    │   │       │                       │   ├── CBool.java
+    │   │       │                       │   ├── GreedyParams.java
+    │   │       │                       │   ├── WhisperAhead.java
+    │   │       │                       │   ├── WhisperAheads.java
+    │   │       │                       │   ├── WhisperContextParams.java
+    │   │       │                       │   ├── WhisperFilters.java
+    │   │       │                       │   ├── WhisperFullParams.java
+    │   │       │                       │   ├── WhisperHParams.java
+    │   │       │                       │   └── WhisperSamplingStrategy.java
+    │   │       │                       ├── WhisperConstants.java
+    │   │       │                       ├── WhisperContext.java
+    │   │       │                       ├── WhisperCpp.java
+    │   │       │                       └── WhisperCppJnaLibrary.java
+    │   │       └── test
+    │   │           └── java
+    │   │               └── io
+    │   │                   └── github
+    │   │                       └── ggerganov
+    │   │                           └── whispercpp
+    │   │                               ├── WhisperCppTest.java
+    │   │                               └── WhisperJnaLibraryTest.java
+    │   ├── javascript
+    │   │   ├── CMakeLists.txt
+    │   │   ├── emscripten.cpp
+    │   │   ├── libwhisper.worker.js
+    │   │   ├── package.json
+    │   │   ├── package-tmpl.json
+    │   │   ├── README.md
+    │   │   └── whisper.js
+    │   └── ruby
+    │       ├── ext
+    │       │   ├── dependencies_for_windows.rb
+    │       │   ├── dependencies.rb
+    │       │   ├── extconf.rb
+    │       │   ├── options_for_windows.rb
+    │       │   ├── options.rb
+    │       │   ├── ruby_whisper.c
+    │       │   ├── ruby_whisper_context.c
+    │       │   ├── ruby_whisper_context_params.c
+    │       │   ├── ruby_whisper_error.c
+    │       │   ├── ruby_whisper.h
+    │       │   ├── ruby_whisper_model.c
+    │       │   ├── ruby_whisper_params.c
+    │       │   ├── ruby_whisper_segment.c
+    │       │   ├── ruby_whisper_token.c
+    │       │   ├── ruby_whisper_transcribe.cpp
+    │       │   ├── ruby_whisper_vad_context.c
+    │       │   ├── ruby_whisper_vad_context_detect.cpp
+    │       │   ├── ruby_whisper_vad_params.c
+    │       │   ├── ruby_whisper_vad_segment.c
+    │       │   ├── ruby_whisper_vad_segments.c
+    │       │   └── sources
+    │       │       └── CMakeGraphVizOptions.cmake
+    │       ├── extsources.rb
+    │       ├── lib
+    │       │   └── whisper
+    │       │       ├── context.rb
+    │       │       ├── model
+    │       │       │   └── uri.rb
+    │       │       └── segment.rb
+    │       ├── Rakefile
+    │       ├── README.md
+    │       ├── sig
+    │       │   └── whisper.rbs
+    │       ├── test
+    │       │   ├── helper.rb
+    │       │   ├── jfk_reader
+    │       │   │   ├── extconf.rb
+    │       │   │   └── jfk_reader.c
+    │       │   ├── test_callback.rb
+    │       │   ├── test_context_params.rb
+    │       │   ├── test_error.rb
+    │       │   ├── test_model.rb
+    │       │   ├── test_package.rb
+    │       │   ├── test_params.rb
+    │       │   ├── test_segment.rb
+    │       │   ├── test_token.rb
+    │       │   ├── test_vad_context.rb
+    │       │   ├── test_vad_params.rb
+    │       │   ├── test_vad.rb
+    │       │   ├── test_vad_segment.rb
+    │       │   ├── test_vad_segments.rb
+    │       │   └── test_whisper.rb
+    │       └── whispercpp.gemspec
+    ├── build
+    │   ├── bin
+    │   │   ├── bench
+    │   │   ├── main
+    │   │   ├── test-vad
+    │   │   ├── test-vad-full
+    │   │   ├── whisper-bench
+    │   │   ├── whisper-cli
+    │   │   ├── whisper-quantize
+    │   │   ├── whisper-server
+    │   │   └── whisper-vad-speech-segments
+    │   ├── CMakeCache.txt
+    │   ├── CMakeFiles
+    │   │   ├── 4.3.1
+    │   │   │   ├── CMakeASMCompiler.cmake
+    │   │   │   ├── CMakeCCompiler.cmake
+    │   │   │   ├── CMakeCXXCompiler.cmake
+    │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+    │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+    │   │   │   ├── CMakeSystem.cmake
+    │   │   │   ├── CompilerIdASM
+    │   │   │   ├── CompilerIdC
+    │   │   │   │   ├── a.out
+    │   │   │   │   ├── CMakeCCompilerId.c
+    │   │   │   │   └── tmp
+    │   │   │   └── CompilerIdCXX
+    │   │   │       ├── a.out
+    │   │   │       ├── CMakeCXXCompilerId.cpp
+    │   │   │       └── tmp
+    │   │   ├── cmake.check_cache
+    │   │   ├── CMakeConfigureLog.yaml
+    │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   ├── CMakeRuleHashes.txt
+    │   │   ├── CMakeScratch
+    │   │   ├── ContinuousBuild.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ContinuousConfigure.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ContinuousCoverage.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── Continuous.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ContinuousMemCheck.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ContinuousStart.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ContinuousSubmit.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ContinuousTest.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ContinuousUpdate.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── CTestScript.cmake
+    │   │   ├── ExperimentalBuild.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ExperimentalConfigure.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ExperimentalCoverage.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── Experimental.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ExperimentalMemCheck.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ExperimentalStart.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ExperimentalSubmit.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ExperimentalTest.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── ExperimentalUpdate.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── FindOpenMP
+    │   │   │   ├── ompver_C.bin
+    │   │   │   └── ompver_CXX.bin
+    │   │   ├── InstallScripts.json
+    │   │   ├── Makefile2
+    │   │   ├── Makefile.cmake
+    │   │   ├── NightlyBuild.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── NightlyConfigure.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── NightlyCoverage.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── Nightly.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── NightlyMemCheck.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── NightlyMemoryCheck.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── NightlyStart.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── NightlySubmit.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── NightlyTest.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── NightlyUpdate.dir
+    │   │   │   ├── build.make
+    │   │   │   ├── cmake_clean.cmake
+    │   │   │   ├── compiler_depend.make
+    │   │   │   ├── compiler_depend.ts
+    │   │   │   ├── DependInfo.cmake
+    │   │   │   └── progress.make
+    │   │   ├── pkgRedirects
+    │   │   ├── progress.marks
+    │   │   └── TargetDirectories.txt
+    │   ├── cmake_install.cmake
+    │   ├── compile_commands.json
+    │   ├── CTestTestfile.cmake
+    │   ├── DartConfiguration.tcl
+    │   ├── examples
+    │   │   ├── bench
+    │   │   │   ├── CMakeFiles
+    │   │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   │   ├── progress.marks
+    │   │   │   │   └── whisper-bench.dir
+    │   │   │   │       ├── bench.cpp.o
+    │   │   │   │       ├── bench.cpp.o.d
+    │   │   │   │       ├── build.make
+    │   │   │   │       ├── cmake_clean.cmake
+    │   │   │   │       ├── compiler_depend.make
+    │   │   │   │       ├── compiler_depend.ts
+    │   │   │   │       ├── DependInfo.cmake
+    │   │   │   │       ├── depend.make
+    │   │   │   │       ├── flags.make
+    │   │   │   │       ├── link.d
+    │   │   │   │       ├── link.txt
+    │   │   │   │       └── progress.make
+    │   │   │   ├── cmake_install.cmake
+    │   │   │   ├── CTestTestfile.cmake
+    │   │   │   └── Makefile
+    │   │   ├── cli
+    │   │   │   ├── CMakeFiles
+    │   │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   │   ├── progress.marks
+    │   │   │   │   └── whisper-cli.dir
+    │   │   │   │       ├── build.make
+    │   │   │   │       ├── cli.cpp.o
+    │   │   │   │       ├── cli.cpp.o.d
+    │   │   │   │       ├── cmake_clean.cmake
+    │   │   │   │       ├── compiler_depend.make
+    │   │   │   │       ├── compiler_depend.ts
+    │   │   │   │       ├── DependInfo.cmake
+    │   │   │   │       ├── depend.make
+    │   │   │   │       ├── flags.make
+    │   │   │   │       ├── link.d
+    │   │   │   │       ├── link.txt
+    │   │   │   │       └── progress.make
+    │   │   │   ├── cmake_install.cmake
+    │   │   │   ├── CTestTestfile.cmake
+    │   │   │   └── Makefile
+    │   │   ├── CMakeFiles
+    │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   ├── common.dir
+    │   │   │   │   ├── build.make
+    │   │   │   │   ├── cmake_clean.cmake
+    │   │   │   │   ├── cmake_clean_target.cmake
+    │   │   │   │   ├── common.cpp.o
+    │   │   │   │   ├── common.cpp.o.d
+    │   │   │   │   ├── common-ggml.cpp.o
+    │   │   │   │   ├── common-ggml.cpp.o.d
+    │   │   │   │   ├── common-whisper.cpp.o
+    │   │   │   │   ├── common-whisper.cpp.o.d
+    │   │   │   │   ├── compiler_depend.make
+    │   │   │   │   ├── compiler_depend.ts
+    │   │   │   │   ├── DependInfo.cmake
+    │   │   │   │   ├── depend.make
+    │   │   │   │   ├── flags.make
+    │   │   │   │   ├── grammar-parser.cpp.o
+    │   │   │   │   ├── grammar-parser.cpp.o.d
+    │   │   │   │   ├── link.txt
+    │   │   │   │   └── progress.make
+    │   │   │   └── progress.marks
+    │   │   ├── cmake_install.cmake
+    │   │   ├── CTestTestfile.cmake
+    │   │   ├── deprecation-warning
+    │   │   │   ├── CMakeFiles
+    │   │   │   │   ├── bench.dir
+    │   │   │   │   │   ├── build.make
+    │   │   │   │   │   ├── cmake_clean.cmake
+    │   │   │   │   │   ├── compiler_depend.make
+    │   │   │   │   │   ├── compiler_depend.ts
+    │   │   │   │   │   ├── DependInfo.cmake
+    │   │   │   │   │   ├── depend.make
+    │   │   │   │   │   ├── deprecation-warning.cpp.o
+    │   │   │   │   │   ├── deprecation-warning.cpp.o.d
+    │   │   │   │   │   ├── flags.make
+    │   │   │   │   │   ├── link.d
+    │   │   │   │   │   ├── link.txt
+    │   │   │   │   │   └── progress.make
+    │   │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   │   ├── main.dir
+    │   │   │   │   │   ├── build.make
+    │   │   │   │   │   ├── cmake_clean.cmake
+    │   │   │   │   │   ├── compiler_depend.make
+    │   │   │   │   │   ├── compiler_depend.ts
+    │   │   │   │   │   ├── DependInfo.cmake
+    │   │   │   │   │   ├── depend.make
+    │   │   │   │   │   ├── deprecation-warning.cpp.o
+    │   │   │   │   │   ├── deprecation-warning.cpp.o.d
+    │   │   │   │   │   ├── flags.make
+    │   │   │   │   │   ├── link.d
+    │   │   │   │   │   ├── link.txt
+    │   │   │   │   │   └── progress.make
+    │   │   │   │   └── progress.marks
+    │   │   │   ├── cmake_install.cmake
+    │   │   │   ├── CTestTestfile.cmake
+    │   │   │   └── Makefile
+    │   │   ├── libcommon.a
+    │   │   ├── Makefile
+    │   │   ├── quantize
+    │   │   │   ├── CMakeFiles
+    │   │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   │   ├── progress.marks
+    │   │   │   │   └── whisper-quantize.dir
+    │   │   │   │       ├── build.make
+    │   │   │   │       ├── cmake_clean.cmake
+    │   │   │   │       ├── compiler_depend.make
+    │   │   │   │       ├── compiler_depend.ts
+    │   │   │   │       ├── DependInfo.cmake
+    │   │   │   │       ├── depend.make
+    │   │   │   │       ├── flags.make
+    │   │   │   │       ├── link.d
+    │   │   │   │       ├── link.txt
+    │   │   │   │       ├── progress.make
+    │   │   │   │       ├── quantize.cpp.o
+    │   │   │   │       └── quantize.cpp.o.d
+    │   │   │   ├── cmake_install.cmake
+    │   │   │   ├── CTestTestfile.cmake
+    │   │   │   └── Makefile
+    │   │   ├── server
+    │   │   │   ├── CMakeFiles
+    │   │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   │   ├── progress.marks
+    │   │   │   │   └── whisper-server.dir
+    │   │   │   │       ├── build.make
+    │   │   │   │       ├── cmake_clean.cmake
+    │   │   │   │       ├── compiler_depend.make
+    │   │   │   │       ├── compiler_depend.ts
+    │   │   │   │       ├── DependInfo.cmake
+    │   │   │   │       ├── depend.make
+    │   │   │   │       ├── flags.make
+    │   │   │   │       ├── link.d
+    │   │   │   │       ├── link.txt
+    │   │   │   │       ├── progress.make
+    │   │   │   │       ├── server.cpp.o
+    │   │   │   │       └── server.cpp.o.d
+    │   │   │   ├── cmake_install.cmake
+    │   │   │   ├── CTestTestfile.cmake
+    │   │   │   └── Makefile
+    │   │   └── vad-speech-segments
+    │   │       ├── CMakeFiles
+    │   │       │   ├── CMakeDirectoryInformation.cmake
+    │   │       │   ├── progress.marks
+    │   │       │   └── whisper-vad-speech-segments.dir
+    │   │       │       ├── build.make
+    │   │       │       ├── cmake_clean.cmake
+    │   │       │       ├── compiler_depend.make
+    │   │       │       ├── compiler_depend.ts
+    │   │       │       ├── DependInfo.cmake
+    │   │       │       ├── depend.make
+    │   │       │       ├── flags.make
+    │   │       │       ├── link.d
+    │   │       │       ├── link.txt
+    │   │       │       ├── progress.make
+    │   │       │       ├── speech.cpp.o
+    │   │       │       └── speech.cpp.o.d
+    │   │       ├── cmake_install.cmake
+    │   │       ├── CTestTestfile.cmake
+    │   │       └── Makefile
+    │   ├── ggml
+    │   │   ├── CMakeFiles
+    │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   └── progress.marks
+    │   │   ├── cmake_install.cmake
+    │   │   ├── ggml-config.cmake
+    │   │   ├── ggml-version.cmake
+    │   │   ├── Makefile
+    │   │   └── src
+    │   │       ├── CMakeFiles
+    │   │       │   ├── CMakeDirectoryInformation.cmake
+    │   │       │   ├── ggml-base.dir
+    │   │       │   │   ├── build.make
+    │   │       │   │   ├── cmake_clean.cmake
+    │   │       │   │   ├── compiler_depend.make
+    │   │       │   │   ├── compiler_depend.ts
+    │   │       │   │   ├── DependInfo.cmake
+    │   │       │   │   ├── depend.make
+    │   │       │   │   ├── flags.make
+    │   │       │   │   ├── ggml-alloc.c.o
+    │   │       │   │   ├── ggml-alloc.c.o.d
+    │   │       │   │   ├── ggml-backend.cpp.o
+    │   │       │   │   ├── ggml-backend.cpp.o.d
+    │   │       │   │   ├── ggml-backend-meta.cpp.o
+    │   │       │   │   ├── ggml-backend-meta.cpp.o.d
+    │   │       │   │   ├── ggml.c.o
+    │   │       │   │   ├── ggml.c.o.d
+    │   │       │   │   ├── ggml.cpp.o
+    │   │       │   │   ├── ggml.cpp.o.d
+    │   │       │   │   ├── ggml-opt.cpp.o
+    │   │       │   │   ├── ggml-opt.cpp.o.d
+    │   │       │   │   ├── ggml-quants.c.o
+    │   │       │   │   ├── ggml-quants.c.o.d
+    │   │       │   │   ├── ggml-threading.cpp.o
+    │   │       │   │   ├── ggml-threading.cpp.o.d
+    │   │       │   │   ├── gguf.cpp.o
+    │   │       │   │   ├── gguf.cpp.o.d
+    │   │       │   │   ├── link.d
+    │   │       │   │   ├── link.txt
+    │   │       │   │   └── progress.make
+    │   │       │   ├── ggml-cpu.dir
+    │   │       │   │   ├── build.make
+    │   │       │   │   ├── cmake_clean.cmake
+    │   │       │   │   ├── compiler_depend.make
+    │   │       │   │   ├── compiler_depend.ts
+    │   │       │   │   ├── DependInfo.cmake
+    │   │       │   │   ├── depend.make
+    │   │       │   │   ├── flags.make
+    │   │       │   │   ├── ggml-cpu
+    │   │       │   │   │   ├── amx
+    │   │       │   │   │   │   ├── amx.cpp.o
+    │   │       │   │   │   │   ├── amx.cpp.o.d
+    │   │       │   │   │   │   ├── mmq.cpp.o
+    │   │       │   │   │   │   └── mmq.cpp.o.d
+    │   │       │   │   │   ├── arch
+    │   │       │   │   │   │   └── x86
+    │   │       │   │   │   │       ├── quants.c.o
+    │   │       │   │   │   │       ├── quants.c.o.d
+    │   │       │   │   │   │       ├── repack.cpp.o
+    │   │       │   │   │   │       └── repack.cpp.o.d
+    │   │       │   │   │   ├── binary-ops.cpp.o
+    │   │       │   │   │   ├── binary-ops.cpp.o.d
+    │   │       │   │   │   ├── ggml-cpu.c.o
+    │   │       │   │   │   ├── ggml-cpu.c.o.d
+    │   │       │   │   │   ├── ggml-cpu.cpp.o
+    │   │       │   │   │   ├── ggml-cpu.cpp.o.d
+    │   │       │   │   │   ├── hbm.cpp.o
+    │   │       │   │   │   ├── hbm.cpp.o.d
+    │   │       │   │   │   ├── ops.cpp.o
+    │   │       │   │   │   ├── ops.cpp.o.d
+    │   │       │   │   │   ├── quants.c.o
+    │   │       │   │   │   ├── quants.c.o.d
+    │   │       │   │   │   ├── repack.cpp.o
+    │   │       │   │   │   ├── repack.cpp.o.d
+    │   │       │   │   │   ├── traits.cpp.o
+    │   │       │   │   │   ├── traits.cpp.o.d
+    │   │       │   │   │   ├── unary-ops.cpp.o
+    │   │       │   │   │   ├── unary-ops.cpp.o.d
+    │   │       │   │   │   ├── vec.cpp.o
+    │   │       │   │   │   └── vec.cpp.o.d
+    │   │       │   │   ├── link.d
+    │   │       │   │   ├── link.txt
+    │   │       │   │   └── progress.make
+    │   │       │   ├── ggml.dir
+    │   │       │   │   ├── build.make
+    │   │       │   │   ├── cmake_clean.cmake
+    │   │       │   │   ├── compiler_depend.make
+    │   │       │   │   ├── compiler_depend.ts
+    │   │       │   │   ├── DependInfo.cmake
+    │   │       │   │   ├── depend.make
+    │   │       │   │   ├── flags.make
+    │   │       │   │   ├── ggml-backend-dl.cpp.o
+    │   │       │   │   ├── ggml-backend-dl.cpp.o.d
+    │   │       │   │   ├── ggml-backend-reg.cpp.o
+    │   │       │   │   ├── ggml-backend-reg.cpp.o.d
+    │   │       │   │   ├── link.d
+    │   │       │   │   ├── link.txt
+    │   │       │   │   └── progress.make
+    │   │       │   └── progress.marks
+    │   │       ├── cmake_install.cmake
+    │   │       ├── ggml-cpu
+    │   │       │   ├── CMakeFiles
+    │   │       │   │   ├── CMakeDirectoryInformation.cmake
+    │   │       │   │   └── progress.marks
+    │   │       │   ├── cmake_install.cmake
+    │   │       │   └── Makefile
+    │   │       ├── libggml-base.so -> libggml-base.so.0
+    │   │       ├── libggml-base.so.0 -> libggml-base.so.0.10.2
+    │   │       ├── libggml-base.so.0.10.2
+    │   │       ├── libggml-cpu.so -> libggml-cpu.so.0
+    │   │       ├── libggml-cpu.so.0 -> libggml-cpu.so.0.10.2
+    │   │       ├── libggml-cpu.so.0.10.2
+    │   │       ├── libggml.so -> libggml.so.0
+    │   │       ├── libggml.so.0 -> libggml.so.0.10.2
+    │   │       ├── libggml.so.0.10.2
+    │   │       └── Makefile
+    │   ├── Makefile
+    │   ├── src
+    │   │   ├── CMakeFiles
+    │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   ├── progress.marks
+    │   │   │   └── whisper.dir
+    │   │   │       ├── build.make
+    │   │   │       ├── cmake_clean.cmake
+    │   │   │       ├── compiler_depend.make
+    │   │   │       ├── compiler_depend.ts
+    │   │   │       ├── DependInfo.cmake
+    │   │   │       ├── depend.make
+    │   │   │       ├── flags.make
+    │   │   │       ├── link.d
+    │   │   │       ├── link.txt
+    │   │   │       ├── progress.make
+    │   │   │       ├── whisper.cpp.o
+    │   │   │       └── whisper.cpp.o.d
+    │   │   ├── cmake_install.cmake
+    │   │   ├── libwhisper.so -> libwhisper.so.1
+    │   │   ├── libwhisper.so.1 -> libwhisper.so.1.8.4
+    │   │   ├── libwhisper.so.1.8.4
+    │   │   └── Makefile
+    │   ├── Testing
+    │   │   └── Temporary
+    │   ├── tests
+    │   │   ├── CMakeFiles
+    │   │   │   ├── CMakeDirectoryInformation.cmake
+    │   │   │   ├── progress.marks
+    │   │   │   ├── test-vad.dir
+    │   │   │   │   ├── build.make
+    │   │   │   │   ├── cmake_clean.cmake
+    │   │   │   │   ├── compiler_depend.make
+    │   │   │   │   ├── compiler_depend.ts
+    │   │   │   │   ├── DependInfo.cmake
+    │   │   │   │   ├── depend.make
+    │   │   │   │   ├── flags.make
+    │   │   │   │   ├── link.d
+    │   │   │   │   ├── link.txt
+    │   │   │   │   ├── progress.make
+    │   │   │   │   ├── test-vad.cpp.o
+    │   │   │   │   └── test-vad.cpp.o.d
+    │   │   │   └── test-vad-full.dir
+    │   │   │       ├── build.make
+    │   │   │       ├── cmake_clean.cmake
+    │   │   │       ├── compiler_depend.make
+    │   │   │       ├── compiler_depend.ts
+    │   │   │       ├── DependInfo.cmake
+    │   │   │       ├── depend.make
+    │   │   │       ├── flags.make
+    │   │   │       ├── link.d
+    │   │   │       ├── link.txt
+    │   │   │       ├── progress.make
+    │   │   │       ├── test-vad-full.cpp.o
+    │   │   │       └── test-vad-full.cpp.o.d
+    │   │   ├── cmake_install.cmake
+    │   │   ├── CTestTestfile.cmake
+    │   │   └── Makefile
+    │   ├── whisper-config.cmake
+    │   ├── whisper.pc
+    │   └── whisper-version.cmake
+    ├── build-xcframework.sh
+    ├── ci
+    │   ├── README.md
+    │   └── run.sh
+    ├── close-issue.yml
+    ├── cmake
+    │   ├── arm64-apple-clang.cmake
+    │   ├── arm64-windows-llvm.cmake
+    │   ├── build-info.cmake
+    │   ├── DefaultTargetOptions.cmake
+    │   ├── FindFFmpeg.cmake
+    │   ├── git-vars.cmake
+    │   ├── riscv64-spacemit-linux-gnu-gcc.cmake
+    │   ├── whisper-config.cmake.in
+    │   ├── whisper.pc.in
+    │   └── x64-windows-llvm.cmake
+    ├── CMakeLists.txt
+    ├── examples
+    │   ├── addon.node
+    │   │   ├── addon.cpp
+    │   │   ├── CMakeLists.txt
+    │   │   ├── index.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── __test__
+    │   │   │   └── whisper.spec.js
+    │   │   └── vad-example.js
+    │   ├── bench
+    │   │   ├── bench.cpp
+    │   │   ├── CMakeLists.txt
+    │   │   └── README.md
+    │   ├── bench.wasm
+    │   │   ├── CMakeLists.txt
+    │   │   ├── emscripten.cpp
+    │   │   ├── index-tmpl.html
+    │   │   └── README.md
+    │   ├── cli
+    │   │   ├── cli.cpp
+    │   │   ├── CMakeLists.txt
+    │   │   └── README.md
+    │   ├── CMakeLists.txt
+    │   ├── coi-serviceworker.js
+    │   ├── command
+    │   │   ├── CMakeLists.txt
+    │   │   ├── command.cpp
+    │   │   ├── commands.txt
+    │   │   └── README.md
+    │   ├── command.wasm
+    │   │   ├── CMakeLists.txt
+    │   │   ├── emscripten.cpp
+    │   │   ├── index-tmpl.html
+    │   │   └── README.md
+    │   ├── common.cpp
+    │   ├── common-ggml.cpp
+    │   ├── common-ggml.h
+    │   ├── common.h
+    │   ├── common-sdl.cpp
+    │   ├── common-sdl.h
+    │   ├── common-whisper.cpp
+    │   ├── common-whisper.h
+    │   ├── deprecation-warning
+    │   │   ├── CMakeLists.txt
+    │   │   ├── deprecation-warning.cpp
+    │   │   └── README.md
+    │   ├── ffmpeg-transcode.cpp
+    │   ├── generate-karaoke.sh
+    │   ├── grammar-parser.cpp
+    │   ├── grammar-parser.h
+    │   ├── helpers.js
+    │   ├── json.hpp
+    │   ├── livestream.sh
+    │   ├── lsp
+    │   │   ├── CMakeLists.txt
+    │   │   ├── lsp.cpp
+    │   │   ├── README.md
+    │   │   └── whisper.vim
+    │   ├── miniaudio.h
+    │   ├── python
+    │   │   ├── test_whisper_processor.py
+    │   │   └── whisper_processor.py
+    │   ├── quantize
+    │   │   ├── CMakeLists.txt
+    │   │   ├── quantize.cpp
+    │   │   └── README.md
+    │   ├── server
+    │   │   ├── bench.js
+    │   │   ├── CMakeLists.txt
+    │   │   ├── httplib.h
+    │   │   ├── README.md
+    │   │   └── server.cpp
+    │   ├── server.py
+    │   ├── stb_vorbis.c
+    │   ├── stream
+    │   │   ├── CMakeLists.txt
+    │   │   ├── README.md
+    │   │   └── stream.cpp
+    │   ├── stream.wasm
+    │   │   ├── CMakeLists.txt
+    │   │   ├── emscripten.cpp
+    │   │   ├── index-tmpl.html
+    │   │   └── README.md
+    │   ├── sycl
+    │   │   ├── build.sh
+    │   │   ├── CMakeLists.txt
+    │   │   ├── ls-sycl-device.cpp
+    │   │   ├── README.md
+    │   │   └── run-whisper.sh
+    │   ├── talk-llama
+    │   │   ├── CMakeLists.txt
+    │   │   ├── eleven-labs.py
+    │   │   ├── llama-adapter.cpp
+    │   │   ├── llama-adapter.h
+    │   │   ├── llama-arch.cpp
+    │   │   ├── llama-arch.h
+    │   │   ├── llama-batch.cpp
+    │   │   ├── llama-batch.h
+    │   │   ├── llama-chat.cpp
+    │   │   ├── llama-chat.h
+    │   │   ├── llama-context.cpp
+    │   │   ├── llama-context.h
+    │   │   ├── llama-cparams.cpp
+    │   │   ├── llama-cparams.h
+    │   │   ├── llama.cpp
+    │   │   ├── llama-ext.h
+    │   │   ├── llama-grammar.cpp
+    │   │   ├── llama-grammar.h
+    │   │   ├── llama-graph.cpp
+    │   │   ├── llama-graph.h
+    │   │   ├── llama.h
+    │   │   ├── llama-hparams.cpp
+    │   │   ├── llama-hparams.h
+    │   │   ├── llama-impl.cpp
+    │   │   ├── llama-impl.h
+    │   │   ├── llama-io.cpp
+    │   │   ├── llama-io.h
+    │   │   ├── llama-kv-cache.cpp
+    │   │   ├── llama-kv-cache.h
+    │   │   ├── llama-kv-cache-iswa.cpp
+    │   │   ├── llama-kv-cache-iswa.h
+    │   │   ├── llama-kv-cells.h
+    │   │   ├── llama-memory.cpp
+    │   │   ├── llama-memory.h
+    │   │   ├── llama-memory-hybrid.cpp
+    │   │   ├── llama-memory-hybrid.h
+    │   │   ├── llama-memory-hybrid-iswa.cpp
+    │   │   ├── llama-memory-hybrid-iswa.h
+    │   │   ├── llama-memory-recurrent.cpp
+    │   │   ├── llama-memory-recurrent.h
+    │   │   ├── llama-mmap.cpp
+    │   │   ├── llama-mmap.h
+    │   │   ├── llama-model.cpp
+    │   │   ├── llama-model.h
+    │   │   ├── llama-model-loader.cpp
+    │   │   ├── llama-model-loader.h
+    │   │   ├── llama-model-saver.cpp
+    │   │   ├── llama-model-saver.h
+    │   │   ├── llama-quant.cpp
+    │   │   ├── llama-quant.h
+    │   │   ├── llama-sampler.cpp
+    │   │   ├── llama-sampler.h
+    │   │   ├── llama-vocab.cpp
+    │   │   ├── llama-vocab.h
+    │   │   ├── models
+    │   │   │   ├── afmoe.cpp
+    │   │   │   ├── apertus.cpp
+    │   │   │   ├── arcee.cpp
+    │   │   │   ├── arctic.cpp
+    │   │   │   ├── arwkv7.cpp
+    │   │   │   ├── baichuan.cpp
+    │   │   │   ├── bailingmoe2.cpp
+    │   │   │   ├── bailingmoe.cpp
+    │   │   │   ├── bert.cpp
+    │   │   │   ├── bitnet.cpp
+    │   │   │   ├── bloom.cpp
+    │   │   │   ├── chameleon.cpp
+    │   │   │   ├── chatglm.cpp
+    │   │   │   ├── codeshell.cpp
+    │   │   │   ├── cogvlm.cpp
+    │   │   │   ├── cohere2-iswa.cpp
+    │   │   │   ├── command-r.cpp
+    │   │   │   ├── dbrx.cpp
+    │   │   │   ├── deci.cpp
+    │   │   │   ├── deepseek2.cpp
+    │   │   │   ├── deepseek.cpp
+    │   │   │   ├── delta-net-base.cpp
+    │   │   │   ├── dots1.cpp
+    │   │   │   ├── dream.cpp
+    │   │   │   ├── ernie4-5.cpp
+    │   │   │   ├── ernie4-5-moe.cpp
+    │   │   │   ├── eurobert.cpp
+    │   │   │   ├── exaone4.cpp
+    │   │   │   ├── exaone.cpp
+    │   │   │   ├── exaone-moe.cpp
+    │   │   │   ├── falcon.cpp
+    │   │   │   ├── falcon-h1.cpp
+    │   │   │   ├── gemma2-iswa.cpp
+    │   │   │   ├── gemma3.cpp
+    │   │   │   ├── gemma3n-iswa.cpp
+    │   │   │   ├── gemma4-iswa.cpp
+    │   │   │   ├── gemma.cpp
+    │   │   │   ├── gemma-embedding.cpp
+    │   │   │   ├── glm4.cpp
+    │   │   │   ├── glm4-moe.cpp
+    │   │   │   ├── gpt2.cpp
+    │   │   │   ├── gptneox.cpp
+    │   │   │   ├── granite.cpp
+    │   │   │   ├── granite-hybrid.cpp
+    │   │   │   ├── grok.cpp
+    │   │   │   ├── grovemoe.cpp
+    │   │   │   ├── hunyuan-dense.cpp
+    │   │   │   ├── hunyuan-moe.cpp
+    │   │   │   ├── internlm2.cpp
+    │   │   │   ├── jais2.cpp
+    │   │   │   ├── jais.cpp
+    │   │   │   ├── jamba.cpp
+    │   │   │   ├── kimi-linear.cpp
+    │   │   │   ├── lfm2.cpp
+    │   │   │   ├── llada.cpp
+    │   │   │   ├── llada-moe.cpp
+    │   │   │   ├── llama4.cpp
+    │   │   │   ├── llama.cpp
+    │   │   │   ├── maincoder.cpp
+    │   │   │   ├── mamba-base.cpp
+    │   │   │   ├── mamba.cpp
+    │   │   │   ├── mimo2-iswa.cpp
+    │   │   │   ├── minicpm3.cpp
+    │   │   │   ├── minimax-m2.cpp
+    │   │   │   ├── mistral3.cpp
+    │   │   │   ├── models.h
+    │   │   │   ├── modern-bert.cpp
+    │   │   │   ├── mpt.cpp
+    │   │   │   ├── nemotron.cpp
+    │   │   │   ├── nemotron-h.cpp
+    │   │   │   ├── neo-bert.cpp
+    │   │   │   ├── olmo2.cpp
+    │   │   │   ├── olmo.cpp
+    │   │   │   ├── olmoe.cpp
+    │   │   │   ├── openai-moe-iswa.cpp
+    │   │   │   ├── openelm.cpp
+    │   │   │   ├── orion.cpp
+    │   │   │   ├── paddleocr.cpp
+    │   │   │   ├── pangu-embedded.cpp
+    │   │   │   ├── phi2.cpp
+    │   │   │   ├── phi3.cpp
+    │   │   │   ├── plamo2.cpp
+    │   │   │   ├── plamo3.cpp
+    │   │   │   ├── plamo.cpp
+    │   │   │   ├── plm.cpp
+    │   │   │   ├── qwen2.cpp
+    │   │   │   ├── qwen2moe.cpp
+    │   │   │   ├── qwen2vl.cpp
+    │   │   │   ├── qwen35.cpp
+    │   │   │   ├── qwen35moe.cpp
+    │   │   │   ├── qwen3.cpp
+    │   │   │   ├── qwen3moe.cpp
+    │   │   │   ├── qwen3next.cpp
+    │   │   │   ├── qwen3vl.cpp
+    │   │   │   ├── qwen3vl-moe.cpp
+    │   │   │   ├── qwen.cpp
+    │   │   │   ├── refact.cpp
+    │   │   │   ├── rnd1.cpp
+    │   │   │   ├── rwkv6-base.cpp
+    │   │   │   ├── rwkv6.cpp
+    │   │   │   ├── rwkv6qwen2.cpp
+    │   │   │   ├── rwkv7-base.cpp
+    │   │   │   ├── rwkv7.cpp
+    │   │   │   ├── seed-oss.cpp
+    │   │   │   ├── smallthinker.cpp
+    │   │   │   ├── smollm3.cpp
+    │   │   │   ├── stablelm.cpp
+    │   │   │   ├── starcoder2.cpp
+    │   │   │   ├── starcoder.cpp
+    │   │   │   ├── step35-iswa.cpp
+    │   │   │   ├── t5.cpp
+    │   │   │   ├── t5encoder.cpp
+    │   │   │   ├── wavtokenizer-dec.cpp
+    │   │   │   └── xverse.cpp
+    │   │   ├── prompts
+    │   │   │   └── talk-alpaca.txt
+    │   │   ├── README.md
+    │   │   ├── speak
+    │   │   ├── speak.bat
+    │   │   ├── speak.ps1
+    │   │   ├── talk-llama.cpp
+    │   │   ├── unicode.cpp
+    │   │   ├── unicode-data.cpp
+    │   │   ├── unicode-data.h
+    │   │   └── unicode.h
+    │   ├── twitch.sh
+    │   ├── vad-speech-segments
+    │   │   ├── CMakeLists.txt
+    │   │   ├── README.md
+    │   │   └── speech.cpp
+    │   ├── wchess
+    │   │   ├── CMakeLists.txt
+    │   │   ├── libwchess
+    │   │   │   ├── Chessboard.cpp
+    │   │   │   ├── Chessboard.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── test-chessboard.cpp
+    │   │   │   ├── WChess.cpp
+    │   │   │   └── WChess.h
+    │   │   ├── README.md
+    │   │   ├── wchess.cmd
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   └── wchess.cmd.cpp
+    │   │   └── wchess.wasm
+    │   │       ├── chessboardjs-1.0.0
+    │   │       │   ├── css
+    │   │       │   │   ├── chessboard-1.0.0.css
+    │   │       │   │   └── chessboard-1.0.0.min.css
+    │   │       │   ├── img
+    │   │       │   │   └── chesspieces
+    │   │       │   │       └── wikipedia
+    │   │       │   │           ├── bB.png
+    │   │       │   │           ├── bK.png
+    │   │       │   │           ├── bN.png
+    │   │       │   │           ├── bP.png
+    │   │       │   │           ├── bQ.png
+    │   │       │   │           ├── bR.png
+    │   │       │   │           ├── wB.png
+    │   │       │   │           ├── wK.png
+    │   │       │   │           ├── wN.png
+    │   │       │   │           ├── wP.png
+    │   │       │   │           ├── wQ.png
+    │   │       │   │           └── wR.png
+    │   │       │   └── js
+    │   │       │       ├── chessboard-1.0.0
+    │   │       │       │   ├── CHANGELOG.md
+    │   │       │       │   ├── LICENSE.md
+    │   │       │       │   ├── package.json
+    │   │       │       │   └── README.md
+    │   │       │       ├── chessboard-1.0.0.js
+    │   │       │       └── chessboard-1.0.0.min.js
+    │   │       ├── CMakeLists.txt
+    │   │       ├── index-tmpl.html
+    │   │       ├── jquery-3.7.1.min.js
+    │   │       └── wchess.wasm.cpp
+    │   ├── whisper.android
+    │   │   ├── app
+    │   │   │   ├── build.gradle
+    │   │   │   ├── proguard-rules.pro
+    │   │   │   └── src
+    │   │   │       ├── androidTest
+    │   │   │       │   └── java
+    │   │   │       │       └── com
+    │   │   │       │           └── whispercppdemo
+    │   │   │       │               └── ExampleInstrumentedTest.kt
+    │   │   │       ├── main
+    │   │   │       │   ├── AndroidManifest.xml
+    │   │   │       │   ├── java
+    │   │   │       │   │   └── com
+    │   │   │       │   │       └── whispercppdemo
+    │   │   │       │   │           ├── MainActivity.kt
+    │   │   │       │   │           ├── media
+    │   │   │       │   │           │   └── RiffWaveHelper.kt
+    │   │   │       │   │           ├── recorder
+    │   │   │       │   │           │   └── Recorder.kt
+    │   │   │       │   │           └── ui
+    │   │   │       │   │               ├── main
+    │   │   │       │   │               │   ├── MainScreen.kt
+    │   │   │       │   │               │   └── MainScreenViewModel.kt
+    │   │   │       │   │               └── theme
+    │   │   │       │   │                   ├── Color.kt
+    │   │   │       │   │                   ├── Theme.kt
+    │   │   │       │   │                   └── Type.kt
+    │   │   │       │   └── res
+    │   │   │       │       ├── drawable
+    │   │   │       │       │   ├── ic_launcher_background.xml
+    │   │   │       │       │   └── ic_launcher_foreground.xml
+    │   │   │       │       ├── mipmap-anydpi
+    │   │   │       │       │   └── ic_launcher.xml
+    │   │   │       │       ├── values
+    │   │   │       │       │   ├── strings.xml
+    │   │   │       │       │   └── themes.xml
+    │   │   │       │       └── xml
+    │   │   │       │           ├── backup_rules.xml
+    │   │   │       │           └── data_extraction_rules.xml
+    │   │   │       └── test
+    │   │   │           └── java
+    │   │   │               └── com
+    │   │   │                   └── whispercppdemo
+    │   │   │                       └── ExampleUnitTest.kt
+    │   │   ├── build.gradle
+    │   │   ├── gradle
+    │   │   │   └── wrapper
+    │   │   │       ├── gradle-wrapper.jar
+    │   │   │       └── gradle-wrapper.properties
+    │   │   ├── gradle.properties
+    │   │   ├── gradlew
+    │   │   ├── gradlew.bat
+    │   │   ├── lib
+    │   │   │   ├── build.gradle
+    │   │   │   └── src
+    │   │   │       └── main
+    │   │   │           ├── AndroidManifest.xml
+    │   │   │           ├── java
+    │   │   │           │   └── com
+    │   │   │           │       └── whispercpp
+    │   │   │           │           └── whisper
+    │   │   │           │               ├── LibWhisper.kt
+    │   │   │           │               └── WhisperCpuConfig.kt
+    │   │   │           └── jni
+    │   │   │               └── whisper
+    │   │   │                   ├── CMakeLists.txt
+    │   │   │                   └── jni.c
+    │   │   ├── README.md
+    │   │   └── settings.gradle
+    │   ├── whisper.android.java
+    │   │   ├── app
+    │   │   │   ├── build.gradle
+    │   │   │   ├── proguard-rules.pro
+    │   │   │   └── src
+    │   │   │       ├── androidTest
+    │   │   │       │   └── java
+    │   │   │       │       └── com
+    │   │   │       │           └── litongjava
+    │   │   │       │               └── whisper
+    │   │   │       │                   └── android
+    │   │   │       │                       └── java
+    │   │   │       │                           └── ExampleInstrumentedTest.java
+    │   │   │       ├── main
+    │   │   │       │   ├── AndroidManifest.xml
+    │   │   │       │   ├── assets
+    │   │   │       │   │   └── logback.xml
+    │   │   │       │   ├── java
+    │   │   │       │   │   └── com
+    │   │   │       │   │       ├── litongjava
+    │   │   │       │   │       │   └── whisper
+    │   │   │       │   │       │       └── android
+    │   │   │       │   │       │           └── java
+    │   │   │       │   │       │               ├── app
+    │   │   │       │   │       │               │   └── App.java
+    │   │   │       │   │       │               ├── bean
+    │   │   │       │   │       │               │   └── WhisperSegment.java
+    │   │   │       │   │       │               ├── MainActivity.java
+    │   │   │       │   │       │               ├── services
+    │   │   │       │   │       │               │   └── WhisperService.java
+    │   │   │       │   │       │               ├── single
+    │   │   │       │   │       │               │   └── LocalWhisper.java
+    │   │   │       │   │       │               ├── task
+    │   │   │       │   │       │               │   ├── LoadModelTask.java
+    │   │   │       │   │       │               │   └── TranscriptionTask.java
+    │   │   │       │   │       │               └── utils
+    │   │   │       │   │       │                   ├── AssetUtils.java
+    │   │   │       │   │       │                   └── WaveEncoder.java
+    │   │   │       │   │       └── whispercpp
+    │   │   │       │   │           └── java
+    │   │   │       │   │               └── whisper
+    │   │   │       │   │                   ├── CpuInfo.java
+    │   │   │       │   │                   ├── WhisperContext.java
+    │   │   │       │   │                   ├── WhisperCpuConfig.java
+    │   │   │       │   │                   ├── WhisperLib.java
+    │   │   │       │   │                   └── WhisperUtils.java
+    │   │   │       │   ├── jni
+    │   │   │       │   │   └── whisper
+    │   │   │       │   │       ├── CMakeLists.txt
+    │   │   │       │   │       └── jni.c
+    │   │   │       │   └── res
+    │   │   │       │       ├── drawable
+    │   │   │       │       │   └── ic_launcher_background.xml
+    │   │   │       │       ├── drawable-v24
+    │   │   │       │       │   └── ic_launcher_foreground.xml
+    │   │   │       │       ├── layout
+    │   │   │       │       │   └── activity_main.xml
+    │   │   │       │       ├── mipmap-anydpi-v26
+    │   │   │       │       │   ├── ic_launcher_round.xml
+    │   │   │       │       │   └── ic_launcher.xml
+    │   │   │       │       ├── mipmap-hdpi
+    │   │   │       │       │   ├── ic_launcher.png
+    │   │   │       │       │   └── ic_launcher_round.png
+    │   │   │       │       ├── mipmap-mdpi
+    │   │   │       │       │   ├── ic_launcher.png
+    │   │   │       │       │   └── ic_launcher_round.png
+    │   │   │       │       ├── mipmap-xhdpi
+    │   │   │       │       │   ├── ic_launcher.png
+    │   │   │       │       │   └── ic_launcher_round.png
+    │   │   │       │       ├── mipmap-xxhdpi
+    │   │   │       │       │   ├── ic_launcher.png
+    │   │   │       │       │   └── ic_launcher_round.png
+    │   │   │       │       ├── mipmap-xxxhdpi
+    │   │   │       │       │   ├── ic_launcher.png
+    │   │   │       │       │   └── ic_launcher_round.png
+    │   │   │       │       ├── values
+    │   │   │       │       │   ├── colors.xml
+    │   │   │       │       │   ├── strings.xml
+    │   │   │       │       │   └── themes.xml
+    │   │   │       │       └── values-night
+    │   │   │       │           └── themes.xml
+    │   │   │       └── test
+    │   │   │           └── java
+    │   │   │               └── com
+    │   │   │                   └── litongjava
+    │   │   │                       └── whisper
+    │   │   │                           └── android
+    │   │   │                               └── java
+    │   │   │                                   └── ExampleUnitTest.java
+    │   │   ├── build.gradle
+    │   │   ├── gradle
+    │   │   │   └── wrapper
+    │   │   │       ├── gradle-wrapper.jar
+    │   │   │       └── gradle-wrapper.properties
+    │   │   ├── gradle.properties
+    │   │   ├── gradlew
+    │   │   ├── gradlew.bat
+    │   │   ├── README_files
+    │   │   │   └── 1.jpg
+    │   │   ├── README.md
+    │   │   └── settings.gradle
+    │   ├── whisper.nvim
+    │   │   ├── README.md
+    │   │   └── whisper.nvim
+    │   ├── whisper.objc
+    │   │   ├── README.md
+    │   │   ├── whisper.objc
+    │   │   │   ├── AppDelegate.h
+    │   │   │   ├── AppDelegate.m
+    │   │   │   ├── Assets.xcassets
+    │   │   │   │   ├── AccentColor.colorset
+    │   │   │   │   │   └── Contents.json
+    │   │   │   │   ├── AppIcon.appiconset
+    │   │   │   │   │   └── Contents.json
+    │   │   │   │   └── Contents.json
+    │   │   │   ├── Base.lproj
+    │   │   │   │   ├── LaunchScreen.storyboard
+    │   │   │   │   └── Main.storyboard
+    │   │   │   ├── Info.plist
+    │   │   │   ├── main.m
+    │   │   │   ├── SceneDelegate.h
+    │   │   │   ├── SceneDelegate.m
+    │   │   │   ├── ViewController.h
+    │   │   │   └── ViewController.m
+    │   │   └── whisper.objc.xcodeproj
+    │   │       ├── project.pbxproj
+    │   │       └── project.xcworkspace
+    │   │           ├── contents.xcworkspacedata
+    │   │           └── xcshareddata
+    │   │               └── IDEWorkspaceChecks.plist
+    │   ├── whisper.swiftui
+    │   │   ├── README.md
+    │   │   ├── whisper.cpp.swift
+    │   │   │   └── LibWhisper.swift
+    │   │   ├── whisper.swiftui.demo
+    │   │   │   ├── Models
+    │   │   │   │   ├── Model.swift
+    │   │   │   │   └── WhisperState.swift
+    │   │   │   ├── Resources
+    │   │   │   │   ├── models
+    │   │   │   │   └── samples
+    │   │   │   ├── Supporting files
+    │   │   │   │   ├── Assets.xcassets
+    │   │   │   │   │   ├── AccentColor.colorset
+    │   │   │   │   │   │   └── Contents.json
+    │   │   │   │   │   ├── AppIcon.appiconset
+    │   │   │   │   │   │   └── Contents.json
+    │   │   │   │   │   └── Contents.json
+    │   │   │   │   ├── Preview Content
+    │   │   │   │   │   └── Preview Assets.xcassets
+    │   │   │   │   │       └── Contents.json
+    │   │   │   │   └── WhisperCppDemo.entitlements
+    │   │   │   ├── UI
+    │   │   │   │   ├── ContentView.swift
+    │   │   │   │   └── DownloadButton.swift
+    │   │   │   ├── Utils
+    │   │   │   │   ├── Recorder.swift
+    │   │   │   │   └── RiffWaveUtils.swift
+    │   │   │   └── WhisperCppDemoApp.swift
+    │   │   └── whisper.swiftui.xcodeproj
+    │   │       ├── project.pbxproj
+    │   │       ├── project.xcworkspace
+    │   │       │   └── xcshareddata
+    │   │       │       └── IDEWorkspaceChecks.plist
+    │   │       └── xcshareddata
+    │   │           └── xcschemes
+    │   │               └── WhisperCppDemo.xcscheme
+    │   ├── whisper.wasm
+    │   │   ├── CMakeLists.txt
+    │   │   ├── emscripten.cpp
+    │   │   ├── index-tmpl.html
+    │   │   └── README.md
+    │   └── yt-wsp.sh
+    ├── ggml
+    │   ├── cmake
+    │   │   ├── common.cmake
+    │   │   ├── FindNCCL.cmake
+    │   │   ├── ggml-config.cmake.in
+    │   │   └── GitVars.cmake
+    │   ├── CMakeLists.txt
+    │   ├── include
+    │   │   ├── ggml-alloc.h
+    │   │   ├── ggml-backend.h
+    │   │   ├── ggml-blas.h
+    │   │   ├── ggml-cann.h
+    │   │   ├── ggml-cpp.h
+    │   │   ├── ggml-cpu.h
+    │   │   ├── ggml-cuda.h
+    │   │   ├── ggml.h
+    │   │   ├── ggml-hexagon.h
+    │   │   ├── ggml-metal.h
+    │   │   ├── ggml-opencl.h
+    │   │   ├── ggml-openvino.h
+    │   │   ├── ggml-opt.h
+    │   │   ├── ggml-rpc.h
+    │   │   ├── ggml-sycl.h
+    │   │   ├── ggml-virtgpu.h
+    │   │   ├── ggml-vulkan.h
+    │   │   ├── ggml-webgpu.h
+    │   │   ├── ggml-zdnn.h
+    │   │   ├── ggml-zendnn.h
+    │   │   └── gguf.h
+    │   └── src
+    │       ├── CMakeLists.txt
+    │       ├── ggml-alloc.c
+    │       ├── ggml-backend.cpp
+    │       ├── ggml-backend-dl.cpp
+    │       ├── ggml-backend-dl.h
+    │       ├── ggml-backend-impl.h
+    │       ├── ggml-backend-meta.cpp
+    │       ├── ggml-backend-reg.cpp
+    │       ├── ggml-blas
+    │       │   ├── CMakeLists.txt
+    │       │   └── ggml-blas.cpp
+    │       ├── ggml.c
+    │       ├── ggml-cann
+    │       │   ├── aclnn_ops.cpp
+    │       │   ├── aclnn_ops.h
+    │       │   ├── acl_tensor.cpp
+    │       │   ├── acl_tensor.h
+    │       │   ├── CMakeLists.txt
+    │       │   ├── common.h
+    │       │   └── ggml-cann.cpp
+    │       ├── ggml-common.h
+    │       ├── ggml.cpp
+    │       ├── ggml-cpu
+    │       │   ├── amx
+    │       │   │   ├── amx.cpp
+    │       │   │   ├── amx.h
+    │       │   │   ├── common.h
+    │       │   │   ├── mmq.cpp
+    │       │   │   └── mmq.h
+    │       │   ├── arch
+    │       │   │   ├── arm
+    │       │   │   │   ├── cpu-feats.cpp
+    │       │   │   │   ├── quants.c
+    │       │   │   │   └── repack.cpp
+    │       │   │   ├── loongarch
+    │       │   │   │   └── quants.c
+    │       │   │   ├── powerpc
+    │       │   │   │   ├── cpu-feats.cpp
+    │       │   │   │   └── quants.c
+    │       │   │   ├── riscv
+    │       │   │   │   ├── cpu-feats.cpp
+    │       │   │   │   ├── quants.c
+    │       │   │   │   └── repack.cpp
+    │       │   │   ├── s390
+    │       │   │   │   ├── cpu-feats.cpp
+    │       │   │   │   └── quants.c
+    │       │   │   ├── wasm
+    │       │   │   │   └── quants.c
+    │       │   │   └── x86
+    │       │   │       ├── cpu-feats.cpp
+    │       │   │       ├── quants.c
+    │       │   │       └── repack.cpp
+    │       │   ├── arch-fallback.h
+    │       │   ├── binary-ops.cpp
+    │       │   ├── binary-ops.h
+    │       │   ├── cmake
+    │       │   │   └── FindSIMD.cmake
+    │       │   ├── CMakeLists.txt
+    │       │   ├── common.h
+    │       │   ├── ggml-cpu.c
+    │       │   ├── ggml-cpu.cpp
+    │       │   ├── ggml-cpu-impl.h
+    │       │   ├── hbm.cpp
+    │       │   ├── hbm.h
+    │       │   ├── kleidiai
+    │       │   │   ├── kernels.cpp
+    │       │   │   ├── kernels.h
+    │       │   │   ├── kleidiai.cpp
+    │       │   │   └── kleidiai.h
+    │       │   ├── llamafile
+    │       │   │   ├── sgemm.cpp
+    │       │   │   └── sgemm.h
+    │       │   ├── ops.cpp
+    │       │   ├── ops.h
+    │       │   ├── quants.c
+    │       │   ├── quants.h
+    │       │   ├── repack.cpp
+    │       │   ├── repack.h
+    │       │   ├── simd-gemm.h
+    │       │   ├── simd-mappings.h
+    │       │   ├── spacemit
+    │       │   │   ├── ime1_kernels.cpp
+    │       │   │   ├── ime.cpp
+    │       │   │   ├── ime.h
+    │       │   │   └── ime_kernels.h
+    │       │   ├── traits.cpp
+    │       │   ├── traits.h
+    │       │   ├── unary-ops.cpp
+    │       │   ├── unary-ops.h
+    │       │   ├── vec.cpp
+    │       │   └── vec.h
+    │       ├── ggml-cuda
+    │       │   ├── acc.cu
+    │       │   ├── acc.cuh
+    │       │   ├── add-id.cu
+    │       │   ├── add-id.cuh
+    │       │   ├── arange.cu
+    │       │   ├── arange.cuh
+    │       │   ├── argmax.cu
+    │       │   ├── argmax.cuh
+    │       │   ├── argsort.cu
+    │       │   ├── argsort.cuh
+    │       │   ├── binbcast.cu
+    │       │   ├── binbcast.cuh
+    │       │   ├── clamp.cu
+    │       │   ├── clamp.cuh
+    │       │   ├── CMakeLists.txt
+    │       │   ├── common.cuh
+    │       │   ├── concat.cu
+    │       │   ├── concat.cuh
+    │       │   ├── conv2d.cu
+    │       │   ├── conv2d.cuh
+    │       │   ├── conv2d-dw.cu
+    │       │   ├── conv2d-dw.cuh
+    │       │   ├── conv2d-transpose.cu
+    │       │   ├── conv2d-transpose.cuh
+    │       │   ├── convert.cu
+    │       │   ├── convert.cuh
+    │       │   ├── conv-transpose-1d.cu
+    │       │   ├── conv-transpose-1d.cuh
+    │       │   ├── count-equal.cu
+    │       │   ├── count-equal.cuh
+    │       │   ├── cp-async.cuh
+    │       │   ├── cpy.cu
+    │       │   ├── cpy.cuh
+    │       │   ├── cpy-utils.cuh
+    │       │   ├── cross-entropy-loss.cu
+    │       │   ├── cross-entropy-loss.cuh
+    │       │   ├── cumsum.cu
+    │       │   ├── cumsum.cuh
+    │       │   ├── dequantize.cuh
+    │       │   ├── diag.cu
+    │       │   ├── diag.cuh
+    │       │   ├── diagmask.cu
+    │       │   ├── diagmask.cuh
+    │       │   ├── fattn-common.cuh
+    │       │   ├── fattn.cu
+    │       │   ├── fattn.cuh
+    │       │   ├── fattn-mma-f16.cuh
+    │       │   ├── fattn-tile.cu
+    │       │   ├── fattn-tile.cuh
+    │       │   ├── fattn-vec.cuh
+    │       │   ├── fattn-wmma-f16.cu
+    │       │   ├── fattn-wmma-f16.cuh
+    │       │   ├── fill.cu
+    │       │   ├── fill.cuh
+    │       │   ├── gated_delta_net.cu
+    │       │   ├── gated_delta_net.cuh
+    │       │   ├── getrows.cu
+    │       │   ├── getrows.cuh
+    │       │   ├── ggml-cuda.cu
+    │       │   ├── gla.cu
+    │       │   ├── gla.cuh
+    │       │   ├── im2col.cu
+    │       │   ├── im2col.cuh
+    │       │   ├── mean.cu
+    │       │   ├── mean.cuh
+    │       │   ├── mma.cuh
+    │       │   ├── mmf.cu
+    │       │   ├── mmf.cuh
+    │       │   ├── mmid.cu
+    │       │   ├── mmid.cuh
+    │       │   ├── mmq.cu
+    │       │   ├── mmq.cuh
+    │       │   ├── mmvf.cu
+    │       │   ├── mmvf.cuh
+    │       │   ├── mmvq.cu
+    │       │   ├── mmvq.cuh
+    │       │   ├── norm.cu
+    │       │   ├── norm.cuh
+    │       │   ├── opt-step-adamw.cu
+    │       │   ├── opt-step-adamw.cuh
+    │       │   ├── opt-step-sgd.cu
+    │       │   ├── opt-step-sgd.cuh
+    │       │   ├── out-prod.cu
+    │       │   ├── out-prod.cuh
+    │       │   ├── pad.cu
+    │       │   ├── pad.cuh
+    │       │   ├── pad_reflect_1d.cu
+    │       │   ├── pad_reflect_1d.cuh
+    │       │   ├── pool2d.cu
+    │       │   ├── pool2d.cuh
+    │       │   ├── quantize.cu
+    │       │   ├── quantize.cuh
+    │       │   ├── reduce_rows.cuh
+    │       │   ├── roll.cu
+    │       │   ├── roll.cuh
+    │       │   ├── rope.cu
+    │       │   ├── rope.cuh
+    │       │   ├── scale.cu
+    │       │   ├── scale.cuh
+    │       │   ├── set.cu
+    │       │   ├── set.cuh
+    │       │   ├── set-rows.cu
+    │       │   ├── set-rows.cuh
+    │       │   ├── softcap.cu
+    │       │   ├── softcap.cuh
+    │       │   ├── softmax.cu
+    │       │   ├── softmax.cuh
+    │       │   ├── solve_tri.cu
+    │       │   ├── solve_tri.cuh
+    │       │   ├── ssm-conv.cu
+    │       │   ├── ssm-conv.cuh
+    │       │   ├── ssm-scan.cu
+    │       │   ├── ssm-scan.cuh
+    │       │   ├── sum.cu
+    │       │   ├── sum.cuh
+    │       │   ├── sumrows.cu
+    │       │   ├── sumrows.cuh
+    │       │   ├── template-instances
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_16-ncols2_1.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_16-ncols2_2.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_16-ncols2_4.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_1-ncols2_16.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_1-ncols2_32.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_1-ncols2_8.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_2-ncols2_16.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_2-ncols2_32.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_2-ncols2_4.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_2-ncols2_8.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_32-ncols2_1.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_32-ncols2_2.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_4-ncols2_16.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_4-ncols2_2.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_4-ncols2_4.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_4-ncols2_8.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_64-ncols2_1.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_8-ncols2_1.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_8-ncols2_2.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_8-ncols2_4.cu
+    │       │   │   ├── fattn-mma-f16-instance-ncols1_8-ncols2_8.cu
+    │       │   │   ├── fattn-tile-instance-dkq112-dv112.cu
+    │       │   │   ├── fattn-tile-instance-dkq128-dv128.cu
+    │       │   │   ├── fattn-tile-instance-dkq256-dv256.cu
+    │       │   │   ├── fattn-tile-instance-dkq320-dv256.cu
+    │       │   │   ├── fattn-tile-instance-dkq40-dv40.cu
+    │       │   │   ├── fattn-tile-instance-dkq512-dv512.cu
+    │       │   │   ├── fattn-tile-instance-dkq576-dv512.cu
+    │       │   │   ├── fattn-tile-instance-dkq64-dv64.cu
+    │       │   │   ├── fattn-tile-instance-dkq72-dv72.cu
+    │       │   │   ├── fattn-tile-instance-dkq80-dv80.cu
+    │       │   │   ├── fattn-tile-instance-dkq96-dv96.cu
+    │       │   │   ├── fattn-vec-instance-bf16-bf16.cu
+    │       │   │   ├── fattn-vec-instance-bf16-f16.cu
+    │       │   │   ├── fattn-vec-instance-bf16-q4_0.cu
+    │       │   │   ├── fattn-vec-instance-bf16-q4_1.cu
+    │       │   │   ├── fattn-vec-instance-bf16-q5_0.cu
+    │       │   │   ├── fattn-vec-instance-bf16-q5_1.cu
+    │       │   │   ├── fattn-vec-instance-bf16-q8_0.cu
+    │       │   │   ├── fattn-vec-instance-f16-bf16.cu
+    │       │   │   ├── fattn-vec-instance-f16-f16.cu
+    │       │   │   ├── fattn-vec-instance-f16-q4_0.cu
+    │       │   │   ├── fattn-vec-instance-f16-q4_1.cu
+    │       │   │   ├── fattn-vec-instance-f16-q5_0.cu
+    │       │   │   ├── fattn-vec-instance-f16-q5_1.cu
+    │       │   │   ├── fattn-vec-instance-f16-q8_0.cu
+    │       │   │   ├── fattn-vec-instance-q4_0-bf16.cu
+    │       │   │   ├── fattn-vec-instance-q4_0-f16.cu
+    │       │   │   ├── fattn-vec-instance-q4_0-q4_0.cu
+    │       │   │   ├── fattn-vec-instance-q4_0-q4_1.cu
+    │       │   │   ├── fattn-vec-instance-q4_0-q5_0.cu
+    │       │   │   ├── fattn-vec-instance-q4_0-q5_1.cu
+    │       │   │   ├── fattn-vec-instance-q4_0-q8_0.cu
+    │       │   │   ├── fattn-vec-instance-q4_1-bf16.cu
+    │       │   │   ├── fattn-vec-instance-q4_1-f16.cu
+    │       │   │   ├── fattn-vec-instance-q4_1-q4_0.cu
+    │       │   │   ├── fattn-vec-instance-q4_1-q4_1.cu
+    │       │   │   ├── fattn-vec-instance-q4_1-q5_0.cu
+    │       │   │   ├── fattn-vec-instance-q4_1-q5_1.cu
+    │       │   │   ├── fattn-vec-instance-q4_1-q8_0.cu
+    │       │   │   ├── fattn-vec-instance-q5_0-bf16.cu
+    │       │   │   ├── fattn-vec-instance-q5_0-f16.cu
+    │       │   │   ├── fattn-vec-instance-q5_0-q4_0.cu
+    │       │   │   ├── fattn-vec-instance-q5_0-q4_1.cu
+    │       │   │   ├── fattn-vec-instance-q5_0-q5_0.cu
+    │       │   │   ├── fattn-vec-instance-q5_0-q5_1.cu
+    │       │   │   ├── fattn-vec-instance-q5_0-q8_0.cu
+    │       │   │   ├── fattn-vec-instance-q5_1-bf16.cu
+    │       │   │   ├── fattn-vec-instance-q5_1-f16.cu
+    │       │   │   ├── fattn-vec-instance-q5_1-q4_0.cu
+    │       │   │   ├── fattn-vec-instance-q5_1-q4_1.cu
+    │       │   │   ├── fattn-vec-instance-q5_1-q5_0.cu
+    │       │   │   ├── fattn-vec-instance-q5_1-q5_1.cu
+    │       │   │   ├── fattn-vec-instance-q5_1-q8_0.cu
+    │       │   │   ├── fattn-vec-instance-q8_0-bf16.cu
+    │       │   │   ├── fattn-vec-instance-q8_0-f16.cu
+    │       │   │   ├── fattn-vec-instance-q8_0-q4_0.cu
+    │       │   │   ├── fattn-vec-instance-q8_0-q4_1.cu
+    │       │   │   ├── fattn-vec-instance-q8_0-q5_0.cu
+    │       │   │   ├── fattn-vec-instance-q8_0-q5_1.cu
+    │       │   │   ├── fattn-vec-instance-q8_0-q8_0.cu
+    │       │   │   ├── generate_cu_files.py
+    │       │   │   ├── mmf-instance-ncols_10.cu
+    │       │   │   ├── mmf-instance-ncols_11.cu
+    │       │   │   ├── mmf-instance-ncols_12.cu
+    │       │   │   ├── mmf-instance-ncols_13.cu
+    │       │   │   ├── mmf-instance-ncols_14.cu
+    │       │   │   ├── mmf-instance-ncols_15.cu
+    │       │   │   ├── mmf-instance-ncols_16.cu
+    │       │   │   ├── mmf-instance-ncols_1.cu
+    │       │   │   ├── mmf-instance-ncols_2.cu
+    │       │   │   ├── mmf-instance-ncols_3.cu
+    │       │   │   ├── mmf-instance-ncols_4.cu
+    │       │   │   ├── mmf-instance-ncols_5.cu
+    │       │   │   ├── mmf-instance-ncols_6.cu
+    │       │   │   ├── mmf-instance-ncols_7.cu
+    │       │   │   ├── mmf-instance-ncols_8.cu
+    │       │   │   ├── mmf-instance-ncols_9.cu
+    │       │   │   ├── mmq-instance-iq1_s.cu
+    │       │   │   ├── mmq-instance-iq2_s.cu
+    │       │   │   ├── mmq-instance-iq2_xs.cu
+    │       │   │   ├── mmq-instance-iq2_xxs.cu
+    │       │   │   ├── mmq-instance-iq3_s.cu
+    │       │   │   ├── mmq-instance-iq3_xxs.cu
+    │       │   │   ├── mmq-instance-iq4_nl.cu
+    │       │   │   ├── mmq-instance-iq4_xs.cu
+    │       │   │   ├── mmq-instance-mxfp4.cu
+    │       │   │   ├── mmq-instance-nvfp4.cu
+    │       │   │   ├── mmq-instance-q1_0.cu
+    │       │   │   ├── mmq-instance-q2_k.cu
+    │       │   │   ├── mmq-instance-q3_k.cu
+    │       │   │   ├── mmq-instance-q4_0.cu
+    │       │   │   ├── mmq-instance-q4_1.cu
+    │       │   │   ├── mmq-instance-q4_k.cu
+    │       │   │   ├── mmq-instance-q5_0.cu
+    │       │   │   ├── mmq-instance-q5_1.cu
+    │       │   │   ├── mmq-instance-q5_k.cu
+    │       │   │   ├── mmq-instance-q6_k.cu
+    │       │   │   └── mmq-instance-q8_0.cu
+    │       │   ├── top-k.cu
+    │       │   ├── top-k.cuh
+    │       │   ├── topk-moe.cu
+    │       │   ├── topk-moe.cuh
+    │       │   ├── tri.cu
+    │       │   ├── tri.cuh
+    │       │   ├── tsembd.cu
+    │       │   ├── tsembd.cuh
+    │       │   ├── unary.cu
+    │       │   ├── unary.cuh
+    │       │   ├── upscale.cu
+    │       │   ├── upscale.cuh
+    │       │   ├── vecdotq.cuh
+    │       │   ├── vendors
+    │       │   │   ├── cuda.h
+    │       │   │   ├── hip.h
+    │       │   │   └── musa.h
+    │       │   ├── wkv.cu
+    │       │   └── wkv.cuh
+    │       ├── ggml-hexagon
+    │       │   ├── CMakeLists.txt
+    │       │   ├── ggml-hexagon.cpp
+    │       │   ├── htp
+    │       │   │   ├── act-ops.c
+    │       │   │   ├── argsort-ops.c
+    │       │   │   ├── binary-ops.c
+    │       │   │   ├── CMakeLists.txt
+    │       │   │   ├── cmake-toolchain.cmake
+    │       │   │   ├── cpy-ops.c
+    │       │   │   ├── cumsum-ops.c
+    │       │   │   ├── diag-ops.c
+    │       │   │   ├── fill-ops.c
+    │       │   │   ├── flash-attn-ops.c
+    │       │   │   ├── get-rows-ops.c
+    │       │   │   ├── hex-dma.c
+    │       │   │   ├── hex-dma.h
+    │       │   │   ├── hex-dump.h
+    │       │   │   ├── hex-fastdiv.h
+    │       │   │   ├── hex-utils.h
+    │       │   │   ├── hmx-flash-attn-ops.c
+    │       │   │   ├── hmx-matmul-ops.c
+    │       │   │   ├── hmx-ops.h
+    │       │   │   ├── hmx-profile.h
+    │       │   │   ├── hmx-queue.c
+    │       │   │   ├── hmx-queue.h
+    │       │   │   ├── hmx-utils.h
+    │       │   │   ├── htp-ctx.h
+    │       │   │   ├── htp_iface.idl
+    │       │   │   ├── htp-ops.h
+    │       │   │   ├── hvx-arith.h
+    │       │   │   ├── hvx-base.h
+    │       │   │   ├── hvx-copy.h
+    │       │   │   ├── hvx-div.h
+    │       │   │   ├── hvx-dump.h
+    │       │   │   ├── hvx-exp.h
+    │       │   │   ├── hvx-floor.h
+    │       │   │   ├── hvx-inverse.h
+    │       │   │   ├── hvx-reduce.h
+    │       │   │   ├── hvx-scale.h
+    │       │   │   ├── hvx-sigmoid.h
+    │       │   │   ├── hvx-sqrt.h
+    │       │   │   ├── hvx-types.h
+    │       │   │   ├── hvx-utils.h
+    │       │   │   ├── main.c
+    │       │   │   ├── matmul-ops.c
+    │       │   │   ├── repeat-ops.c
+    │       │   │   ├── rope-ops.c
+    │       │   │   ├── set-rows-ops.c
+    │       │   │   ├── softmax-ops.c
+    │       │   │   ├── solve-tri-ops.c
+    │       │   │   ├── ssm-conv.c
+    │       │   │   ├── sum-rows-ops.c
+    │       │   │   ├── unary-ops.c
+    │       │   │   ├── vtcm-utils.h
+    │       │   │   ├── worker-pool.c
+    │       │   │   └── worker-pool.h
+    │       │   ├── htp-drv.cpp
+    │       │   ├── htp-drv.h
+    │       │   ├── libdl.h
+    │       │   ├── libggml-htp.inf
+    │       │   └── op-desc.h
+    │       ├── ggml-hip
+    │       │   └── CMakeLists.txt
+    │       ├── ggml-impl.h
+    │       ├── ggml-metal
+    │       │   ├── CMakeLists.txt
+    │       │   ├── ggml-metal-common.cpp
+    │       │   ├── ggml-metal-common.h
+    │       │   ├── ggml-metal-context.h
+    │       │   ├── ggml-metal-context.m
+    │       │   ├── ggml-metal.cpp
+    │       │   ├── ggml-metal-device.cpp
+    │       │   ├── ggml-metal-device.h
+    │       │   ├── ggml-metal-device.m
+    │       │   ├── ggml-metal-impl.h
+    │       │   ├── ggml-metal.metal
+    │       │   ├── ggml-metal-ops.cpp
+    │       │   └── ggml-metal-ops.h
+    │       ├── ggml-musa
+    │       │   ├── CMakeLists.txt
+    │       │   ├── mudnn.cu
+    │       │   └── mudnn.cuh
+    │       ├── ggml-opencl
+    │       │   ├── CMakeLists.txt
+    │       │   ├── ggml-opencl.cpp
+    │       │   └── kernels
+    │       │       ├── add.cl
+    │       │       ├── add_id.cl
+    │       │       ├── argsort.cl
+    │       │       ├── clamp.cl
+    │       │       ├── concat.cl
+    │       │       ├── conv2d.cl
+    │       │       ├── conv2d_f16_f32.cl
+    │       │       ├── cpy.cl
+    │       │       ├── cumsum.cl
+    │       │       ├── cvt.cl
+    │       │       ├── diag.cl
+    │       │       ├── diag_mask_inf.cl
+    │       │       ├── div.cl
+    │       │       ├── embed_kernel.py
+    │       │       ├── exp.cl
+    │       │       ├── expm1.cl
+    │       │       ├── fill.cl
+    │       │       ├── flash_attn_f16.cl
+    │       │       ├── flash_attn_f32.cl
+    │       │       ├── flash_attn_f32_f16.cl
+    │       │       ├── gelu.cl
+    │       │       ├── gemm_moe_mxfp4_f32.cl
+    │       │       ├── gemm_noshuffle_iq4_nl_f32.cl
+    │       │       ├── gemm_noshuffle_q4_1_f32.cl
+    │       │       ├── gemm_noshuffle_q4_k_f32.cl
+    │       │       ├── gemm_noshuffle_q5_k_f32.cl
+    │       │       ├── gemm_noshuffle_q6_k_f32.cl
+    │       │       ├── gemv_moe_mxfp4_f32.cl
+    │       │       ├── gemv_noshuffle.cl
+    │       │       ├── gemv_noshuffle_general.cl
+    │       │       ├── gemv_noshuffle_general_q8_0_f32.cl
+    │       │       ├── gemv_noshuffle_iq4_nl_f32.cl
+    │       │       ├── gemv_noshuffle_q4_1_f32.cl
+    │       │       ├── gemv_noshuffle_q4_k_f32.cl
+    │       │       ├── gemv_noshuffle_q5_k_f32.cl
+    │       │       ├── gemv_noshuffle_q6_k_f32.cl
+    │       │       ├── get_rows.cl
+    │       │       ├── glu.cl
+    │       │       ├── group_norm.cl
+    │       │       ├── im2col_f16.cl
+    │       │       ├── im2col_f32.cl
+    │       │       ├── l2_norm.cl
+    │       │       ├── mean.cl
+    │       │       ├── mul.cl
+    │       │       ├── mul_mat_Ab_Bi_8x4.cl
+    │       │       ├── mul_mat_f16_f32.cl
+    │       │       ├── mul_mm_f16_f32_kq_kqv.cl
+    │       │       ├── mul_mm_f16_f32_l4_lm.cl
+    │       │       ├── mul_mm_f32_f32_l4_lm.cl
+    │       │       ├── mul_mm_iq4_nl_f32_l4_lm.cl
+    │       │       ├── mul_mm_q4_0_f32_l4_lm.cl
+    │       │       ├── mul_mm_q4_1_f32_l4_lm.cl
+    │       │       ├── mul_mm_q4_k_f32_l4_lm.cl
+    │       │       ├── mul_mm_q5_k_f32_l4_lm.cl
+    │       │       ├── mul_mm_q6_k_f32_l4_lm.cl
+    │       │       ├── mul_mm_q8_0_f32_8x4.cl
+    │       │       ├── mul_mm_q8_0_f32_l4_lm.cl
+    │       │       ├── mul_mv_f16_f16.cl
+    │       │       ├── mul_mv_f16_f32_1row.cl
+    │       │       ├── mul_mv_f16_f32.cl
+    │       │       ├── mul_mv_f16_f32_l4.cl
+    │       │       ├── mul_mv_f32_f32.cl
+    │       │       ├── mul_mv_id_mxfp4_f32.cl
+    │       │       ├── mul_mv_id_mxfp4_f32_flat.cl
+    │       │       ├── mul_mv_id_q4_0_f32_8x_flat.cl
+    │       │       ├── mul_mv_id_q8_0_f32.cl
+    │       │       ├── mul_mv_id_q8_0_f32_flat.cl
+    │       │       ├── mul_mv_iq4_nl_f32.cl
+    │       │       ├── mul_mv_iq4_nl_f32_flat.cl
+    │       │       ├── mul_mv_mxfp4_f32.cl
+    │       │       ├── mul_mv_mxfp4_f32_flat.cl
+    │       │       ├── mul_mv_q4_0_f32_1d_16x_flat.cl
+    │       │       ├── mul_mv_q4_0_f32_1d_8x_flat.cl
+    │       │       ├── mul_mv_q4_0_f32_8x_flat.cl
+    │       │       ├── mul_mv_q4_0_f32.cl
+    │       │       ├── mul_mv_q4_0_f32_v.cl
+    │       │       ├── mul_mv_q4_1_f32.cl
+    │       │       ├── mul_mv_q4_1_f32_flat.cl
+    │       │       ├── mul_mv_q4_k_f32.cl
+    │       │       ├── mul_mv_q4_k_f32_flat.cl
+    │       │       ├── mul_mv_q5_k_f32.cl
+    │       │       ├── mul_mv_q5_k_f32_flat.cl
+    │       │       ├── mul_mv_q6_k_f32.cl
+    │       │       ├── mul_mv_q6_k_f32_flat.cl
+    │       │       ├── mul_mv_q8_0_f32.cl
+    │       │       ├── mul_mv_q8_0_f32_flat.cl
+    │       │       ├── neg.cl
+    │       │       ├── norm.cl
+    │       │       ├── pad.cl
+    │       │       ├── relu.cl
+    │       │       ├── repeat.cl
+    │       │       ├── rms_norm.cl
+    │       │       ├── rope.cl
+    │       │       ├── scale.cl
+    │       │       ├── set_rows.cl
+    │       │       ├── sigmoid.cl
+    │       │       ├── silu.cl
+    │       │       ├── softmax_4_f16.cl
+    │       │       ├── softmax_4_f32.cl
+    │       │       ├── softmax_f16.cl
+    │       │       ├── softmax_f32.cl
+    │       │       ├── softplus.cl
+    │       │       ├── solve_tri.cl
+    │       │       ├── sqr.cl
+    │       │       ├── sqrt.cl
+    │       │       ├── ssm_conv.cl
+    │       │       ├── sub.cl
+    │       │       ├── sum_rows.cl
+    │       │       ├── tanh.cl
+    │       │       ├── transpose.cl
+    │       │       ├── tri.cl
+    │       │       ├── tsembd.cl
+    │       │       └── upscale.cl
+    │       ├── ggml-openvino
+    │       │   ├── CMakeLists.txt
+    │       │   ├── ggml-decoder.cpp
+    │       │   ├── ggml-decoder.h
+    │       │   ├── ggml-openvino.cpp
+    │       │   ├── ggml-openvino-extra.cpp
+    │       │   ├── ggml-openvino-extra.h
+    │       │   ├── ggml-quants.cpp
+    │       │   ├── ggml-quants.h
+    │       │   ├── openvino
+    │       │   │   ├── decoder.h
+    │       │   │   ├── frontend.cpp
+    │       │   │   ├── frontend.h
+    │       │   │   ├── input_model.cpp
+    │       │   │   ├── input_model.h
+    │       │   │   ├── node_context.h
+    │       │   │   ├── op
+    │       │   │   │   ├── cont.cpp
+    │       │   │   │   ├── cpy.cpp
+    │       │   │   │   ├── flash_attn_ext.cpp
+    │       │   │   │   ├── get_rows.cpp
+    │       │   │   │   ├── glu_geglu.cpp
+    │       │   │   │   ├── glu_swiglu.cpp
+    │       │   │   │   ├── mulmat.cpp
+    │       │   │   │   ├── permute.cpp
+    │       │   │   │   ├── reshape.cpp
+    │       │   │   │   ├── rms_norm.cpp
+    │       │   │   │   ├── rope.cpp
+    │       │   │   │   ├── scale.cpp
+    │       │   │   │   ├── set_rows.cpp
+    │       │   │   │   ├── softmax.cpp
+    │       │   │   │   ├── transpose.cpp
+    │       │   │   │   ├── unary_gelu.cpp
+    │       │   │   │   ├── unary_silu.cpp
+    │       │   │   │   └── view.cpp
+    │       │   │   ├── op_table.cpp
+    │       │   │   ├── op_table.h
+    │       │   │   ├── pass
+    │       │   │   │   ├── fuse_to_sdpa.cpp
+    │       │   │   │   ├── fuse_to_sdpa.h
+    │       │   │   │   ├── mark_decompression_convert_constant_folding.h
+    │       │   │   │   ├── squeeze_matmul.cpp
+    │       │   │   │   └── squeeze_matmul.h
+    │       │   │   ├── rt_info
+    │       │   │   │   └── weightless_caching_attributes.hpp
+    │       │   │   ├── translate_session.cpp
+    │       │   │   ├── translate_session.h
+    │       │   │   ├── utils.cpp
+    │       │   │   └── utils.h
+    │       │   ├── utils.cpp
+    │       │   └── utils.h
+    │       ├── ggml-opt.cpp
+    │       ├── ggml-quants.c
+    │       ├── ggml-quants.h
+    │       ├── ggml-rpc
+    │       │   ├── CMakeLists.txt
+    │       │   ├── ggml-rpc.cpp
+    │       │   ├── transport.cpp
+    │       │   └── transport.h
+    │       ├── ggml-sycl
+    │       │   ├── add-id.cpp
+    │       │   ├── add-id.hpp
+    │       │   ├── backend.hpp
+    │       │   ├── binbcast.cpp
+    │       │   ├── binbcast.hpp
+    │       │   ├── CMakeLists.txt
+    │       │   ├── common.cpp
+    │       │   ├── common.hpp
+    │       │   ├── concat.cpp
+    │       │   ├── concat.hpp
+    │       │   ├── conv.cpp
+    │       │   ├── convert.cpp
+    │       │   ├── convert.hpp
+    │       │   ├── conv.hpp
+    │       │   ├── count-equal.cpp
+    │       │   ├── count-equal.hpp
+    │       │   ├── cpy.cpp
+    │       │   ├── cpy.hpp
+    │       │   ├── dequantize.hpp
+    │       │   ├── dmmv.cpp
+    │       │   ├── dmmv.hpp
+    │       │   ├── dpct
+    │       │   │   └── helper.hpp
+    │       │   ├── element_wise.cpp
+    │       │   ├── element_wise.hpp
+    │       │   ├── fattn-common.hpp
+    │       │   ├── fattn.cpp
+    │       │   ├── fattn.hpp
+    │       │   ├── fattn-tile.cpp
+    │       │   ├── fattn-tile.hpp
+    │       │   ├── fattn-vec.hpp
+    │       │   ├── gated_delta_net.cpp
+    │       │   ├── gated_delta_net.hpp
+    │       │   ├── gemm.hpp
+    │       │   ├── getrows.cpp
+    │       │   ├── getrows.hpp
+    │       │   ├── ggml-sycl.cpp
+    │       │   ├── gla.cpp
+    │       │   ├── gla.hpp
+    │       │   ├── im2col.cpp
+    │       │   ├── im2col.hpp
+    │       │   ├── mmq.cpp
+    │       │   ├── mmq.hpp
+    │       │   ├── mmvq.cpp
+    │       │   ├── mmvq.hpp
+    │       │   ├── norm.cpp
+    │       │   ├── norm.hpp
+    │       │   ├── outprod.cpp
+    │       │   ├── outprod.hpp
+    │       │   ├── pad.cpp
+    │       │   ├── pad.hpp
+    │       │   ├── pad_reflect_1d.cpp
+    │       │   ├── pad_reflect_1d.hpp
+    │       │   ├── presets.hpp
+    │       │   ├── quantize.hpp
+    │       │   ├── quants.hpp
+    │       │   ├── repeat_back.cpp
+    │       │   ├── repeat_back.hpp
+    │       │   ├── roll.cpp
+    │       │   ├── roll.hpp
+    │       │   ├── rope.cpp
+    │       │   ├── rope.hpp
+    │       │   ├── set.cpp
+    │       │   ├── set.hpp
+    │       │   ├── set_rows.cpp
+    │       │   ├── set_rows.hpp
+    │       │   ├── softmax.cpp
+    │       │   ├── softmax.hpp
+    │       │   ├── ssm_conv.cpp
+    │       │   ├── ssm_conv.hpp
+    │       │   ├── sycl_hw.cpp
+    │       │   ├── sycl_hw.hpp
+    │       │   ├── template-instances
+    │       │   │   ├── fattn-tile-instance-dkq112-dv112.cpp
+    │       │   │   ├── fattn-tile-instance-dkq128-dv128.cpp
+    │       │   │   ├── fattn-tile-instance-dkq256-dv256.cpp
+    │       │   │   ├── fattn-tile-instance-dkq40-dv40.cpp
+    │       │   │   ├── fattn-tile-instance-dkq512-dv512.cpp
+    │       │   │   ├── fattn-tile-instance-dkq576-dv512.cpp
+    │       │   │   ├── fattn-tile-instance-dkq64-dv64.cpp
+    │       │   │   ├── fattn-tile-instance-dkq72-dv72.cpp
+    │       │   │   ├── fattn-tile-instance-dkq80-dv80.cpp
+    │       │   │   ├── fattn-tile-instance-dkq96-dv96.cpp
+    │       │   │   ├── fattn-vec-instance-f16-f16.cpp
+    │       │   │   ├── fattn-vec-instance-f16-q4_0.cpp
+    │       │   │   ├── fattn-vec-instance-f16-q4_1.cpp
+    │       │   │   ├── fattn-vec-instance-f16-q5_0.cpp
+    │       │   │   ├── fattn-vec-instance-f16-q5_1.cpp
+    │       │   │   ├── fattn-vec-instance-f16-q8_0.cpp
+    │       │   │   ├── fattn-vec-instance-q4_0-f16.cpp
+    │       │   │   ├── fattn-vec-instance-q4_0-q4_0.cpp
+    │       │   │   ├── fattn-vec-instance-q4_0-q4_1.cpp
+    │       │   │   ├── fattn-vec-instance-q4_0-q5_0.cpp
+    │       │   │   ├── fattn-vec-instance-q4_0-q5_1.cpp
+    │       │   │   ├── fattn-vec-instance-q4_0-q8_0.cpp
+    │       │   │   ├── fattn-vec-instance-q4_1-f16.cpp
+    │       │   │   ├── fattn-vec-instance-q4_1-q4_0.cpp
+    │       │   │   ├── fattn-vec-instance-q4_1-q4_1.cpp
+    │       │   │   ├── fattn-vec-instance-q4_1-q5_0.cpp
+    │       │   │   ├── fattn-vec-instance-q4_1-q5_1.cpp
+    │       │   │   ├── fattn-vec-instance-q4_1-q8_0.cpp
+    │       │   │   ├── fattn-vec-instance-q5_0-f16.cpp
+    │       │   │   ├── fattn-vec-instance-q5_0-q4_0.cpp
+    │       │   │   ├── fattn-vec-instance-q5_0-q4_1.cpp
+    │       │   │   ├── fattn-vec-instance-q5_0-q5_0.cpp
+    │       │   │   ├── fattn-vec-instance-q5_0-q5_1.cpp
+    │       │   │   ├── fattn-vec-instance-q5_0-q8_0.cpp
+    │       │   │   ├── fattn-vec-instance-q5_1-f16.cpp
+    │       │   │   ├── fattn-vec-instance-q5_1-q4_0.cpp
+    │       │   │   ├── fattn-vec-instance-q5_1-q4_1.cpp
+    │       │   │   ├── fattn-vec-instance-q5_1-q5_0.cpp
+    │       │   │   ├── fattn-vec-instance-q5_1-q5_1.cpp
+    │       │   │   ├── fattn-vec-instance-q5_1-q8_0.cpp
+    │       │   │   ├── fattn-vec-instance-q8_0-f16.cpp
+    │       │   │   ├── fattn-vec-instance-q8_0-q4_0.cpp
+    │       │   │   ├── fattn-vec-instance-q8_0-q4_1.cpp
+    │       │   │   ├── fattn-vec-instance-q8_0-q5_0.cpp
+    │       │   │   ├── fattn-vec-instance-q8_0-q5_1.cpp
+    │       │   │   └── fattn-vec-instance-q8_0-q8_0.cpp
+    │       │   ├── tsembd.cpp
+    │       │   ├── tsembd.hpp
+    │       │   ├── type.hpp
+    │       │   ├── upscale.cpp
+    │       │   ├── upscale.hpp
+    │       │   ├── vecdotq.hpp
+    │       │   ├── wkv.cpp
+    │       │   └── wkv.hpp
+    │       ├── ggml-threading.cpp
+    │       ├── ggml-threading.h
+    │       ├── ggml-virtgpu
+    │       │   ├── apir_cs_ggml-rpc-front.cpp
+    │       │   ├── backend
+    │       │   │   ├── apir_cs_ggml-rpc-back.cpp
+    │       │   │   ├── backend-convert.h
+    │       │   │   ├── backend.cpp
+    │       │   │   ├── backend-dispatched-backend.cpp
+    │       │   │   ├── backend-dispatched-buffer.cpp
+    │       │   │   ├── backend-dispatched-buffer-type.cpp
+    │       │   │   ├── backend-dispatched.cpp
+    │       │   │   ├── backend-dispatched-device.cpp
+    │       │   │   ├── backend-dispatched.gen.h
+    │       │   │   ├── backend-dispatched.h
+    │       │   │   ├── backend-virgl-apir.h
+    │       │   │   ├── CMakeLists.txt
+    │       │   │   └── shared
+    │       │   │       ├── apir_backend.gen.h
+    │       │   │       ├── apir_backend.h
+    │       │   │       ├── apir_cs_ggml.h
+    │       │   │       ├── apir_cs.h
+    │       │   │       ├── apir_cs_rpc.h
+    │       │   │       └── api_remoting.h
+    │       │   ├── CMakeLists.txt
+    │       │   ├── ggml-backend-buffer.cpp
+    │       │   ├── ggml-backend-buffer-type.cpp
+    │       │   ├── ggml-backend.cpp
+    │       │   ├── ggml-backend-device.cpp
+    │       │   ├── ggml-backend-reg.cpp
+    │       │   ├── ggmlremoting_functions.yaml
+    │       │   ├── ggml-remoting.h
+    │       │   ├── include
+    │       │   │   └── apir_hw.h
+    │       │   ├── regenerate_remoting.py
+    │       │   ├── virtgpu-apir.h
+    │       │   ├── virtgpu.cpp
+    │       │   ├── virtgpu-forward-backend.cpp
+    │       │   ├── virtgpu-forward-buffer.cpp
+    │       │   ├── virtgpu-forward-buffer-type.cpp
+    │       │   ├── virtgpu-forward-device.cpp
+    │       │   ├── virtgpu-forward.gen.h
+    │       │   ├── virtgpu-forward-impl.h
+    │       │   ├── virtgpu.h
+    │       │   ├── virtgpu-shm.cpp
+    │       │   ├── virtgpu-shm.h
+    │       │   ├── virtgpu-utils.cpp
+    │       │   └── virtgpu-utils.h
+    │       ├── ggml-vulkan
+    │       │   ├── cmake
+    │       │   │   └── host-toolchain.cmake.in
+    │       │   ├── CMakeLists.txt
+    │       │   ├── ggml-vulkan.cpp
+    │       │   └── vulkan-shaders
+    │       │       ├── abs.comp
+    │       │       ├── acc.comp
+    │       │       ├── add1.comp
+    │       │       ├── add.comp
+    │       │       ├── add_id.comp
+    │       │       ├── arange.comp
+    │       │       ├── argmax.comp
+    │       │       ├── argsort.comp
+    │       │       ├── argsort_large.comp
+    │       │       ├── ceil.comp
+    │       │       ├── clamp.comp
+    │       │       ├── CMakeLists.txt
+    │       │       ├── concat.comp
+    │       │       ├── contig_copy.comp
+    │       │       ├── conv2d_dw.comp
+    │       │       ├── conv2d_mm.comp
+    │       │       ├── conv_transpose_1d.comp
+    │       │       ├── copy.comp
+    │       │       ├── copy_from_quant.comp
+    │       │       ├── copy_to_quant.comp
+    │       │       ├── copy_transpose.comp
+    │       │       ├── cos.comp
+    │       │       ├── count_equal.comp
+    │       │       ├── count_experts.comp
+    │       │       ├── cumsum.comp
+    │       │       ├── cumsum_multipass1.comp
+    │       │       ├── cumsum_multipass2.comp
+    │       │       ├── dequant_f32.comp
+    │       │       ├── dequant_funcs_cm2.glsl
+    │       │       ├── dequant_funcs.glsl
+    │       │       ├── dequant_head.glsl
+    │       │       ├── dequant_iq1_m.comp
+    │       │       ├── dequant_iq1_s.comp
+    │       │       ├── dequant_iq2_s.comp
+    │       │       ├── dequant_iq2_xs.comp
+    │       │       ├── dequant_iq2_xxs.comp
+    │       │       ├── dequant_iq3_s.comp
+    │       │       ├── dequant_iq3_xxs.comp
+    │       │       ├── dequant_iq4_nl.comp
+    │       │       ├── dequant_iq4_xs.comp
+    │       │       ├── dequant_mxfp4.comp
+    │       │       ├── dequant_nvfp4.comp
+    │       │       ├── dequant_q1_0.comp
+    │       │       ├── dequant_q2_k.comp
+    │       │       ├── dequant_q3_k.comp
+    │       │       ├── dequant_q4_0.comp
+    │       │       ├── dequant_q4_1.comp
+    │       │       ├── dequant_q4_k.comp
+    │       │       ├── dequant_q5_0.comp
+    │       │       ├── dequant_q5_1.comp
+    │       │       ├── dequant_q5_k.comp
+    │       │       ├── dequant_q6_k.comp
+    │       │       ├── dequant_q8_0.comp
+    │       │       ├── diag.comp
+    │       │       ├── diag_mask_inf.comp
+    │       │       ├── div.comp
+    │       │       ├── elu.comp
+    │       │       ├── exp.comp
+    │       │       ├── feature-tests
+    │       │       │   ├── bfloat16.comp
+    │       │       │   ├── coopmat2.comp
+    │       │       │   ├── coopmat.comp
+    │       │       │   └── integer_dot.comp
+    │       │       ├── fill.comp
+    │       │       ├── flash_attn_base.glsl
+    │       │       ├── flash_attn_cm1.comp
+    │       │       ├── flash_attn_cm2.comp
+    │       │       ├── flash_attn.comp
+    │       │       ├── flash_attn_mask_opt.comp
+    │       │       ├── flash_attn_mmq_funcs.glsl
+    │       │       ├── flash_attn_split_k_reduce.comp
+    │       │       ├── floor.comp
+    │       │       ├── gated_delta_net.comp
+    │       │       ├── geglu.comp
+    │       │       ├── geglu_erf.comp
+    │       │       ├── geglu_quick.comp
+    │       │       ├── gelu.comp
+    │       │       ├── gelu_erf.comp
+    │       │       ├── gelu_quick.comp
+    │       │       ├── generic_binary_head.glsl
+    │       │       ├── generic_head.glsl
+    │       │       ├── generic_unary_head.glsl
+    │       │       ├── get_rows.comp
+    │       │       ├── get_rows_quant.comp
+    │       │       ├── glu_head.glsl
+    │       │       ├── glu_main.glsl
+    │       │       ├── group_norm.comp
+    │       │       ├── hardsigmoid.comp
+    │       │       ├── hardswish.comp
+    │       │       ├── im2col_3d.comp
+    │       │       ├── im2col.comp
+    │       │       ├── l2_norm.comp
+    │       │       ├── leaky_relu.comp
+    │       │       ├── log.comp
+    │       │       ├── mul.comp
+    │       │       ├── mul_mat_split_k_reduce.comp
+    │       │       ├── mul_mat_vec_base.glsl
+    │       │       ├── mul_mat_vec.comp
+    │       │       ├── mul_mat_vec_iface.glsl
+    │       │       ├── mul_mat_vec_iq1_m.comp
+    │       │       ├── mul_mat_vec_iq1_s.comp
+    │       │       ├── mul_mat_vec_iq2_s.comp
+    │       │       ├── mul_mat_vec_iq2_xs.comp
+    │       │       ├── mul_mat_vec_iq2_xxs.comp
+    │       │       ├── mul_mat_vec_iq3_s.comp
+    │       │       ├── mul_mat_vec_iq3_xxs.comp
+    │       │       ├── mul_mat_vec_nc.comp
+    │       │       ├── mul_mat_vec_p021.comp
+    │       │       ├── mul_mat_vec_q2_k.comp
+    │       │       ├── mul_mat_vec_q3_k.comp
+    │       │       ├── mul_mat_vec_q4_k.comp
+    │       │       ├── mul_mat_vec_q5_k.comp
+    │       │       ├── mul_mat_vec_q6_k.comp
+    │       │       ├── mul_mat_vecq.comp
+    │       │       ├── mul_mat_vecq_funcs.glsl
+    │       │       ├── mul_mm_cm2.comp
+    │       │       ├── mul_mm.comp
+    │       │       ├── mul_mm_funcs.glsl
+    │       │       ├── mul_mm_id_funcs.glsl
+    │       │       ├── mul_mmq.comp
+    │       │       ├── mul_mmq_funcs.glsl
+    │       │       ├── mul_mmq_shmem_types.glsl
+    │       │       ├── multi_add.comp
+    │       │       ├── neg.comp
+    │       │       ├── norm.comp
+    │       │       ├── opt_step_adamw.comp
+    │       │       ├── opt_step_sgd.comp
+    │       │       ├── pad.comp
+    │       │       ├── pool2d.comp
+    │       │       ├── quantize_q8_1.comp
+    │       │       ├── reglu.comp
+    │       │       ├── relu.comp
+    │       │       ├── repeat_back.comp
+    │       │       ├── repeat.comp
+    │       │       ├── rms_norm_back.comp
+    │       │       ├── rms_norm.comp
+    │       │       ├── rms_norm_partials.comp
+    │       │       ├── roll.comp
+    │       │       ├── rope_funcs.glsl
+    │       │       ├── rope_head.glsl
+    │       │       ├── rope_multi.comp
+    │       │       ├── rope_neox.comp
+    │       │       ├── rope_norm.comp
+    │       │       ├── rope_params.glsl
+    │       │       ├── rope_vision.comp
+    │       │       ├── round.comp
+    │       │       ├── scale.comp
+    │       │       ├── sgn.comp
+    │       │       ├── sigmoid.comp
+    │       │       ├── silu_back.comp
+    │       │       ├── silu.comp
+    │       │       ├── sin.comp
+    │       │       ├── soft_max_back.comp
+    │       │       ├── soft_max.comp
+    │       │       ├── soft_max_large1.comp
+    │       │       ├── soft_max_large2.comp
+    │       │       ├── soft_max_large3.comp
+    │       │       ├── soft_max_large_common.glsl
+    │       │       ├── softplus.comp
+    │       │       ├── solve_tri.comp
+    │       │       ├── sqrt.comp
+    │       │       ├── square.comp
+    │       │       ├── ssm_conv.comp
+    │       │       ├── ssm_scan.comp
+    │       │       ├── step.comp
+    │       │       ├── sub.comp
+    │       │       ├── sum_rows.comp
+    │       │       ├── sum_rows.glsl
+    │       │       ├── swiglu.comp
+    │       │       ├── swiglu_oai.comp
+    │       │       ├── tanh.comp
+    │       │       ├── timestep_embedding.comp
+    │       │       ├── topk_argsort.comp
+    │       │       ├── topk_moe.comp
+    │       │       ├── topk_nary_search.comp
+    │       │       ├── tri.comp
+    │       │       ├── trunc.comp
+    │       │       ├── types.glsl
+    │       │       ├── upscale.comp
+    │       │       ├── utils.glsl
+    │       │       ├── vulkan-shaders-gen.cpp
+    │       │       ├── wkv6.comp
+    │       │       ├── wkv7.comp
+    │       │       └── xielu.comp
+    │       ├── ggml-webgpu
+    │       │   ├── CMakeLists.txt
+    │       │   ├── ggml-webgpu.cpp
+    │       │   ├── ggml-webgpu-shader-lib.hpp
+    │       │   ├── pre_wgsl.hpp
+    │       │   └── wgsl-shaders
+    │       │       ├── argmax.wgsl
+    │       │       ├── argsort_merge.wgsl
+    │       │       ├── argsort.wgsl
+    │       │       ├── binary.wgsl
+    │       │       ├── common_decls.tmpl
+    │       │       ├── concat.wgsl
+    │       │       ├── conv2d.wgsl
+    │       │       ├── cpy.wgsl
+    │       │       ├── cumsum.wgsl
+    │       │       ├── embed_wgsl.py
+    │       │       ├── flash_attn_tile.wgsl
+    │       │       ├── flash_attn_vec_blk.wgsl
+    │       │       ├── flash_attn_vec_reduce.wgsl
+    │       │       ├── flash_attn_vec_split.wgsl
+    │       │       ├── flash_attn.wgsl
+    │       │       ├── gated_delta_net.wgsl
+    │       │       ├── get_rows.wgsl
+    │       │       ├── glu.wgsl
+    │       │       ├── im2col.wgsl
+    │       │       ├── memset.wgsl
+    │       │       ├── mul_mat_decls.tmpl
+    │       │       ├── mul_mat_id_gather.wgsl
+    │       │       ├── mul_mat_id_vec.wgsl
+    │       │       ├── mul_mat_id.wgsl
+    │       │       ├── mul_mat_reg_tile.wgsl
+    │       │       ├── mul_mat_subgroup_matrix.wgsl
+    │       │       ├── mul_mat_vec_acc.tmpl
+    │       │       ├── mul_mat_vec.wgsl
+    │       │       ├── mul_mat.wgsl
+    │       │       ├── pad.wgsl
+    │       │       ├── repeat.wgsl
+    │       │       ├── rms_norm_mul.wgsl
+    │       │       ├── rope.wgsl
+    │       │       ├── row_norm.wgsl
+    │       │       ├── scale.wgsl
+    │       │       ├── set_rows.wgsl
+    │       │       ├── set.wgsl
+    │       │       ├── soft_max.wgsl
+    │       │       ├── solve_tri.wgsl
+    │       │       ├── ssm_conv.wgsl
+    │       │       ├── ssm_scan.wgsl
+    │       │       ├── sum_rows.wgsl
+    │       │       ├── unary.wgsl
+    │       │       └── upscale.wgsl
+    │       ├── ggml-zdnn
+    │       │   ├── CMakeLists.txt
+    │       │   ├── common.hpp
+    │       │   ├── ggml-zdnn.cpp
+    │       │   ├── mmf.cpp
+    │       │   ├── mmf.hpp
+    │       │   ├── utils.cpp
+    │       │   └── utils.hpp
+    │       ├── ggml-zendnn
+    │       │   ├── CMakeLists.txt
+    │       │   └── ggml-zendnn.cpp
+    │       └── gguf.cpp
+    ├── grammars
+    │   ├── assistant.gbnf
+    │   ├── chess.gbnf
+    │   └── colors.gbnf
+    ├── include
+    │   └── whisper.h
+    ├── LICENSE
+    ├── Makefile
+    ├── models
+    │   ├── convert-h5-to-coreml.py
+    │   ├── convert-h5-to-ggml.py
+    │   ├── convert-pt-to-ggml.py
+    │   ├── convert-silero-vad-to-ggml.py
+    │   ├── convert-whisper-to-coreml.py
+    │   ├── convert-whisper-to-openvino.py
+    │   ├── download-coreml-model.sh
+    │   ├── download-ggml-model.cmd
+    │   ├── download-ggml-model.sh
+    │   ├── download-vad-model.cmd
+    │   ├── download-vad-model.sh
+    │   ├── for-tests-ggml-base.bin
+    │   ├── for-tests-ggml-base.en.bin
+    │   ├── for-tests-ggml-large.bin
+    │   ├── for-tests-ggml-medium.bin
+    │   ├── for-tests-ggml-medium.en.bin
+    │   ├── for-tests-ggml-small.bin
+    │   ├── for-tests-ggml-small.en.bin
+    │   ├── for-tests-ggml-tiny.bin
+    │   ├── for-tests-ggml-tiny.en.bin
+    │   ├── for-tests-silero-v6.2.0-ggml.bin
+    │   ├── generate-coreml-interface.sh
+    │   ├── generate-coreml-model.sh
+    │   ├── ggml_to_pt.py
+    │   ├── README.md
+    │   ├── requirements-coreml.txt
+    │   └── requirements-openvino.txt
+    ├── README.md
+    ├── README_sycl.md
+    ├── samples
+    │   ├── jfk.mp3
+    │   ├── jfk.wav
+    │   └── README.md
+    ├── scripts
+    │   ├── apple
+    │   │   ├── validate-apps.sh
+    │   │   ├── validate-ios.sh
+    │   │   ├── validate-macos.sh
+    │   │   ├── validate-tvos.sh
+    │   │   └── validate-visionos.sh
+    │   ├── bench-all-gg.txt
+    │   ├── bench-all.sh
+    │   ├── bench.py
+    │   ├── bench-wts.sh
+    │   ├── build-info.sh
+    │   ├── convert-all.sh
+    │   ├── deploy-wasm.sh
+    │   ├── gen-authors.sh
+    │   ├── get-flags.mk
+    │   ├── quantize-all.sh
+    │   ├── sha-all.sh
+    │   ├── sync-ggml-am.sh
+    │   ├── sync-ggml.last
+    │   ├── sync-ggml.sh
+    │   └── sync-llama.sh
+    ├── src
+    │   ├── CMakeLists.txt
+    │   ├── coreml
+    │   │   ├── whisper-compat.h
+    │   │   ├── whisper-compat.m
+    │   │   ├── whisper-decoder-impl.h
+    │   │   ├── whisper-decoder-impl.m
+    │   │   ├── whisper-encoder.h
+    │   │   ├── whisper-encoder-impl.h
+    │   │   ├── whisper-encoder-impl.m
+    │   │   └── whisper-encoder.mm
+    │   ├── openvino
+    │   │   ├── whisper-openvino-encoder.cpp
+    │   │   └── whisper-openvino-encoder.h
+    │   ├── whisper-arch.h
+    │   └── whisper.cpp
+    └── tests
+        ├── CMakeLists.txt
+        ├── earnings21
+        │   ├── eval.mk
+        │   ├── eval.py
+        │   ├── Makefile
+        │   ├── normalizers
+        │   │   ├── basic.py
+        │   │   ├── english.json
+        │   │   ├── english.py
+        │   │   ├── __init__.py
+        │   │   └── LICENSE
+        │   ├── README.md
+        │   └── requirements.txt
+        ├── en-0-ref.txt
+        ├── en-1-ref.txt
+        ├── en-2-ref.txt
+        ├── es-0-ref.txt
+        ├── librispeech
+        │   ├── eval.mk
+        │   ├── eval.py
+        │   ├── Makefile
+        │   ├── normalizers
+        │   │   ├── basic.py
+        │   │   ├── english.json
+        │   │   ├── english.py
+        │   │   ├── __init__.py
+        │   │   └── LICENSE
+        │   ├── README.md
+        │   └── requirements.txt
+        ├── run-tests.sh
+        ├── test-c.c
+        ├── test-vad.cpp
+        ├── test-vad-full.cpp
+        └── test-whisper.js
+
+355 directories, 2174 files
+                                                                                                                                                                                                                     

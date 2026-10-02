@@ -1,0 +1,61 @@
+{
+  "name": "jave-live",
+  "displayName": "JAVE Live",
+  "description": "Live coding bridge between JAVE AI and VS Code",
+  "version": "0.1.0",
+  "publisher": "jave",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jave.connect",
+        "title": "JAVE: Connect to live session"
+      },
+      {
+        "command": "jave.disconnect",
+        "title": "JAVE: Disconnect"
+      },
+      {
+        "command": "jave.showLog",
+        "title": "JAVE: Show operation log"
+      }
+    ],
+    "configuration": {
+      "title": "JAVE Live",
+      "properties": {
+        "jave.port": {
+          "type": "number",
+          "default": 7779,
+          "description": "WebSocket port JAVE broadcasts on"
+        },
+        "jave.autoConnect": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-connect when VS Code starts"
+        },
+        "jave.highlightDuration": {
+          "type": "number",
+          "default": 3000,
+          "description": "How long (ms) to highlight changed lines"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}
